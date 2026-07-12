@@ -121,10 +121,86 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
+}
+
+/* =====================================================
+   Pipe Rescue Design System
+===================================================== */
+
+:root {
+  --brand-blue: #0b5fff;
+  --brand-dark: #0f172a;
+  --brand-red: #dc2626;
+  --brand-green: #16a34a;
+  --brand-gray: #64748b;
+  --section-bg: #f8fafc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  background: var(--section-bg);
+}
+
+.container-custom {
+  width: min(1280px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.section-padding {
+  padding-block: 5rem;
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg,
+      #0b5fff 0%,
+      #2563eb 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg,
+      #0b5fff,
+      #2563eb);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shadow-soft {
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-hover {
+  transition: .3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0b5fff;
+  border-radius: 20px;
+}
+
+::selection {
+  background: #0b5fff;
+  color: white;
 }
