@@ -5,6 +5,7 @@ import {
   GoogleTagManager,
 } from "@next/third-parties/google";
 import "./globals.css";
+import Clarity from "@microsoft/clarity";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -151,6 +152,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  Clarity.init("xlrrciy1qp");
   return (
     <html lang="en" suppressHydrationWarning>
       <body
