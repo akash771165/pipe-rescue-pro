@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import {
+  GoogleAnalytics,
+  GoogleTagManager,
+} from "@next/third-parties/google";
 import "./globals.css";
 
 const geist = Geist({
@@ -160,6 +163,7 @@ export default function RootLayout({
 
         {children}
 
+        <GoogleTagManager gtmId="GTM-TC26LK2X" />
         <GoogleAnalytics gaId="G-CEVKCPR498" />
       </body>
     </html>
