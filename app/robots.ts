@@ -6,20 +6,15 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: "*",
                 allow: "/",
-
                 disallow: [
                     "/api/",
                     "/admin/",
                     "/dashboard/",
                     "/private/",
-                    "/_next/",
-                    "/404",
                 ],
             },
         ],
 
         sitemap: "https://piperesque.com/sitemap.xml",
-
-        host: "https://piperesque.com",
     };
 }
