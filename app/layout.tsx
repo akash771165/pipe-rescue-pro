@@ -5,7 +5,7 @@ import {
   GoogleTagManager,
 } from "@next/third-parties/google";
 import "./globals.css";
-import Clarity from "@microsoft/clarity";
+import ClarityProvider from "@/components/providers/clarity";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -152,7 +152,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  Clarity.init("xlrrciy1qp");
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -165,7 +164,24 @@ export default function RootLayout({
             __html: JSON.stringify(jsonLd),
           }}
         />
+        <body
+          suppressHydrationWarning
+          className={`${geist.variable} ${geistMono.variable} ${inter.variable} antialiased bg-white text-slate-900`}
+        >
+          <ClarityProvider />
 
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(jsonLd),
+            }}
+          />
+
+          {children}
+
+          <GoogleTagManager gtmId="GTM-TC26LK2X" />
+          <GoogleAnalytics gaId="G-CEVKCPR498" />
+        </body>
         {children}
 
         <GoogleTagManager gtmId="GTM-TC26LK2X" />
