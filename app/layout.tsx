@@ -107,9 +107,8 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-
   verification: {
-    google: "GOOGLE_SEARCH_CONSOLE_CODE",
+    google: "cISOThami1OgkEXgEDJFCmELq48QtmnNTdu7V-Iovu4",
   },
 };
 
@@ -161,7 +160,7 @@ export default function RootLayout({
 
         {children}
 
-        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+        <GoogleAnalytics gaId="G-CEVKCPR498" />
       </body>
     </html>
   );
