@@ -158,30 +158,15 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${geist.variable} ${geistMono.variable} ${inter.variable} antialiased bg-white text-slate-900`}
       >
+        <ClarityProvider />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(jsonLd),
           }}
         />
-        <body
-          suppressHydrationWarning
-          className={`${geist.variable} ${geistMono.variable} ${inter.variable} antialiased bg-white text-slate-900`}
-        >
-          <ClarityProvider />
 
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(jsonLd),
-            }}
-          />
-
-          {children}
-
-          <GoogleTagManager gtmId="GTM-TC26LK2X" />
-          <GoogleAnalytics gaId="G-CEVKCPR498" />
-        </body>
         {children}
 
         <GoogleTagManager gtmId="GTM-TC26LK2X" />
@@ -190,4 +175,3 @@ export default function RootLayout({
     </html>
   );
 }
-

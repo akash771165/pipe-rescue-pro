@@ -195,19 +195,23 @@ export default function Footer() {
                                             Call Anytime
                                         </h4>
 
-                                        <p className="text-slate-400">
-                                            <a
-                                                href="tel:+918447987505"
-                                                className="text-slate-400 hover:text-white"
-                                            >
-                                                +91 84479 87505
-                                            </a>
+                                       <div className="space-y-1">
 
-                                            <p className="text-slate-500">
-                                                +91 97185 07728
-                                            </p>
-                                        </p>
+    <a
+        href="tel:+918447987505"
+        className="block text-slate-400 hover:text-white"
+    >
+        +91 84479 87505
+    </a>
 
+    <a
+        href="tel:+919718507728"
+        className="block text-slate-500 hover:text-white"
+    >
+        +91 97185 07728
+    </a>
+
+</div>
                                     </div>
 
                                 </div>
