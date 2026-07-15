@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
+import LocalBusinessSchema from "@/components/seo/local-business-schema";
 import {
   GoogleAnalytics,
   GoogleTagManager,
@@ -195,6 +196,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <LocalBusinessSchema />
       <body
         suppressHydrationWarning
         className={`${geist.variable} ${geistMono.variable} ${inter.variable} bg-white text-slate-900 antialiased`}
