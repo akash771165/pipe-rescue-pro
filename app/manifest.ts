@@ -1,57 +1,84 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/lib/config/site";
 
 export default function manifest(): MetadataRoute.Manifest {
-    return {
-        name: "Pipe Rescue",
-        short_name: "Pipe Rescue",
+  return {
+    id: "/",
 
-        description:
-            "24/7 Emergency Plumbing Services in Houston. Drain cleaning, leak detection, sewer repair, water heater repair and residential & commercial plumbing.",
+    name: `${siteConfig.company} | ${siteConfig.tagline}`,
 
-        start_url: "/",
+    short_name: siteConfig.company,
 
-        scope: "/",
+    description:
+      "24/7 Emergency Plumbing Services in Houston, Texas. Emergency plumbing, drain cleaning, leak detection, sewer line repair, water heater repair, residential and commercial plumbing.",
 
-        display: "standalone",
+    start_url: "/",
 
-        orientation: "portrait",
+    scope: "/",
 
-        background_color: "#ffffff",
+    display: "standalone",
 
-        theme_color: "#2563eb",
+    display_override: ["standalone", "minimal-ui"],
 
-        categories: [
-            "business",
-            "home",
-            "services",
-            "plumbing",
-        ],
+    orientation: "portrait",
 
-        lang: "en-US",
+    background_color: "#ffffff",
 
-        dir: "ltr",
+    theme_color: "#2563eb",
 
-        icons: [
-            {
-                src: "/favicon.ico",
-                sizes: "any",
-                type: "image/x-icon",
-            },
-            {
-                src: "/icon-192.png",
-                sizes: "192x192",
-                type: "image/png",
-            },
-            {
-                src: "/icon-512.png",
-                sizes: "512x512",
-                type: "image/png",
-            },
-            {
-                src: "/apple-touch-icon.png",
-                sizes: "180x180",
-                type: "image/png",
-            },
-        ],
-    };
+    lang: "en-US",
+
+    dir: "ltr",
+
+    categories: [
+      "business",
+      "home-services",
+      "plumbing",
+      "utilities",
+      "local-business",
+    ],
+
+    icons: [
+      {
+        src: "/favicon.ico",
+        sizes: "any",
+        type: "image/x-icon",
+      },
+      {
+        src: "/icon-192.png",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "maskable",
+      },
+      {
+        src: "/icon-512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "maskable",
+      },
+      {
+        src: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+
+    shortcuts: [
+      {
+        name: "Call Now",
+        short_name: "Call",
+        url: `tel:${siteConfig.phone}`,
+      },
+      {
+        name: "Request Estimate",
+        short_name: "Estimate",
+        url: "/contact",
+      },
+      {
+        name: "Our Services",
+        short_name: "Services",
+        url: "/services",
+      },
+    ],
+  };
 }

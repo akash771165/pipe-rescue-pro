@@ -6,6 +6,7 @@ import {
 } from "@next/third-parties/google";
 import "./globals.css";
 import ClarityProvider from "@/components/providers/clarity";
+import { siteConfig } from "@/lib/config/site";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -23,55 +24,58 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://piperesque.com"),
+  metadataBase: new URL(siteConfig.website),
 
   title: {
-    default: "Pipe Rescue | 24/7 Emergency Plumbing Services Houston",
-    template: "%s | Pipe Rescue",
+    default: `${siteConfig.company} | 24/7 Emergency Plumbing Services in Houston, TX`,
+    template: `%s | ${siteConfig.company}`,
   },
 
   description:
-    "Pipe Rescue provides 24/7 emergency plumbing services in Houston, TX including drain cleaning, leak detection, sewer repair, pipe repair, water heater installation, commercial plumbing and residential plumbing.",
+    "Need a licensed emergency plumber in Houston? Pipe Rescue provides 24/7 emergency plumbing, drain cleaning, leak detection, sewer line repair, pipe repair, water heater repair, water heater installation and residential plumbing services.",
 
-  applicationName: "Pipe Rescue",
+  applicationName: siteConfig.company,
 
   referrer: "origin-when-cross-origin",
 
   keywords: [
     "Emergency Plumber Houston",
-    "24/7 Plumber",
-    "Emergency Plumbing",
+    "Houston Plumber",
+    "24/7 Emergency Plumbing",
+    "Emergency Plumbing Houston TX",
     "Drain Cleaning Houston",
-    "Leak Detection",
-    "Pipe Repair",
-    "Water Heater Repair",
+    "Leak Detection Houston",
+    "Water Heater Repair Houston",
     "Water Heater Installation",
-    "Sewer Line Repair",
-    "Commercial Plumbing",
+    "Pipe Repair Houston",
+    "Sewer Line Repair Houston",
     "Residential Plumbing",
+    "Commercial Plumbing",
+    "Licensed Plumber Houston",
     "Houston Plumbing Company",
   ],
 
   authors: [
     {
-      name: "Pipe Rescue",
-      url: "https://piperesque.com",
+      name: siteConfig.company,
+      url: siteConfig.website,
     },
   ],
 
-  creator: "Pipe Rescue",
+  creator: siteConfig.company,
 
-  publisher: "Pipe Rescue",
+  publisher: siteConfig.company,
 
   category: "Business",
 
   alternates: {
-    canonical: "https://piperesque.com",
+    canonical: siteConfig.website,
   },
 
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -84,33 +88,35 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://piperesque.com",
-    title: "Pipe Rescue | 24/7 Emergency Plumbing Services Houston",
+    url: siteConfig.website,
+    siteName: siteConfig.company,
+    title: `${siteConfig.company} | 24/7 Emergency Plumbing Services Houston`,
     description:
-      "Professional plumbing company serving Houston with emergency plumbing, drain cleaning, leak detection, sewer repair, water heater services and commercial plumbing.",
-    siteName: "Pipe Rescue",
+      "Licensed plumbing professionals providing emergency plumbing, drain cleaning, leak detection, sewer repair and water heater services throughout Houston, Texas.",
     images: [
       {
-        url: "/og-image.png",
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "Pipe Rescue",
+        alt: `${siteConfig.company} Emergency Plumbing`,
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Pipe Rescue",
-    description: "24/7 Emergency Plumbing Services in Houston.",
-    images: ["/og-image.png"],
+    title: `${siteConfig.company} | Emergency Plumbing Houston`,
+    description:
+      "24/7 Emergency Plumbing, Drain Cleaning & Water Heater Repair in Houston.",
+    images: [siteConfig.ogImage],
   },
 
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: siteConfig.favicon,
+    shortcut: siteConfig.favicon,
     apple: "/apple-touch-icon.png",
   },
+
   verification: {
     google: "cISOThami1OgkEXgEDJFCmELq48QtmnNTdu7V-Iovu4",
     other: {
@@ -129,34 +135,69 @@ export const viewport: Viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Plumber",
-  name: "Pipe Rescue",
-  image: "https://piperesque.com/og-image.png",
-  url: "https://piperesque.com",
-  telephone: "+1-713-555-0100",
-  email: "info@piperesque.com",
+
+  "@id": `${siteConfig.website}/#organization`,
+
+  name: siteConfig.company,
+
+  url: siteConfig.website,
+
+  logo: `${siteConfig.website}${siteConfig.logo}`,
+
+  image: `${siteConfig.website}${siteConfig.ogImage}`,
+
+  telephone: siteConfig.phone,
+
+  email: siteConfig.email,
+
+  priceRange: "$$",
+
+  description:
+    "24/7 Emergency Plumbing, Drain Cleaning, Leak Detection, Sewer Repair and Water Heater Services in Houston, Texas.",
+
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Houston",
-    addressRegion: "TX",
-    addressCountry: "US",
+    addressLocality: siteConfig.city,
+    addressRegion: siteConfig.stateCode,
+    addressCountry: siteConfig.countryCode,
   },
-  areaServed: "Houston, Texas",
-  priceRange: "$$",
-  openingHours: "Mo-Su 00:00-23:59",
-  description:
-    "24/7 Emergency Plumbing, Drain Cleaning, Leak Detection, Water Heater Repair and Sewer Repair in Houston.",
+
+  areaServed: [
+    {
+      "@type": "City",
+      name: siteConfig.city,
+    },
+  ],
+
+  openingHours: siteConfig.openingHours,
+
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: siteConfig.phone,
+    contactType: "customer service",
+    areaServed: "US",
+    availableLanguage: "English",
+  },
+
+  sameAs: [
+    siteConfig.facebook,
+    siteConfig.instagram,
+    siteConfig.linkedin,
+    siteConfig.youtube,
+    siteConfig.x,
+  ].filter(Boolean),
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${geist.variable} ${geistMono.variable} ${inter.variable} antialiased bg-white text-slate-900`}
+        className={`${geist.variable} ${geistMono.variable} ${inter.variable} bg-white text-slate-900 antialiased`}
       >
         <ClarityProvider />
 
