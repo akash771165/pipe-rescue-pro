@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { siteConfig } from "@/lib/config/site";
 import {
     Menu,
     X,
@@ -28,7 +29,7 @@ export default function Navbar() {
             {/* Floating Call */}
 
             <a
-                href="tel:+918447987505"
+               href={`tel:${siteConfig.phone}`}
                 aria-label="Call Pipe Rescue"
                 className="fixed bottom-24 right-5 z-[999] flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-white shadow-2xl transition hover:scale-110"
             >
@@ -38,7 +39,7 @@ export default function Navbar() {
             {/* Floating WhatsApp */}
 
             <a
-                href="https://wa.me/918447987505"
+                href={`https://wa.me/${siteConfig.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat on WhatsApp"
@@ -91,7 +92,7 @@ export default function Navbar() {
                         <div>
 
                             <h2 className="text-2xl font-black">
-                                Pipe Rescue
+                               {siteConfig.company}
                             </h2>
 
                             <p className="text-xs text-slate-500">
@@ -130,7 +131,7 @@ export default function Navbar() {
 
                     <div className="hidden items-center gap-4 lg:flex">
 
-                        <a href="tel:+918447987505">
+                       <a href={`tel:${siteConfig.phone}`}>
 
                             <Button
                                 variant="outline"
@@ -139,7 +140,7 @@ export default function Navbar() {
 
                                 <Phone className="mr-2 h-4 w-4" />
 
-                                +91 84479 87505
+                               {siteConfig.phoneDisplay}
 
                             </Button>
 
@@ -194,18 +195,13 @@ export default function Navbar() {
                                 ))}
 
                                 <a
-                                    href="tel:+918447987505"
+                                    href={`tel:${siteConfig.phone}`}
                                     className="rounded-full border border-blue-600 py-3 text-center font-bold text-blue-600"
                                 >
-                                    📞 +91 84479 87505
+                                   📞 {siteConfig.phoneDisplay}
                                 </a>
 
-                                <a
-                                    href="tel:+919718507728"
-                                    className="rounded-full border border-blue-600 py-3 text-center font-bold text-blue-600"
-                                >
-                                    📞 +91 97185 07728
-                                </a>
+                                
 
                                 <Link href="/contact">
 
