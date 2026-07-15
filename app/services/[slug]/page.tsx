@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import FAQSchema from "@/components/seo/faq-schema";
+import BreadcrumbSchema from "@/components/seo/breadcrumb-schema";
 
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
@@ -89,6 +90,22 @@ export default async function ServicePage({
 
   return (
     <main className="overflow-x-hidden bg-white">
+      <BreadcrumbSchema
+  items={[
+    {
+      name: "Home",
+      url: "https://www.piperesque.com",
+    },
+    {
+      name: "Services",
+      url: "https://www.piperesque.com/services",
+    },
+    {
+      name: service.shortTitle,
+      url: `https://www.piperesque.com/services/${service.slug}`,
+    },
+  ]}
+/>
 <FAQSchema
   faqs={[
     {
