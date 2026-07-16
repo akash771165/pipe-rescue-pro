@@ -5,170 +5,160 @@ import { useState } from "react";
 import Image from "next/image";
 import { siteConfig } from "@/lib/config/site";
 import {
-    ChevronDown,
-    Phone,
-    ShieldCheck,
-    Clock3,
+  ChevronDown,
+  Phone,
+  Clock3,
+  MapPin,
 } from "lucide-react";
 
 const faqs = [
   {
-    q: "Do you provide 24/7 emergency plumbing services in Houston?",
-    a: "Yes. We help connect homeowners with licensed plumbing professionals who provide 24/7 emergency plumbing services throughout Houston, Texas.",
+    q: "What does Pipe Rescue do?",
+    a: "Pipe Rescue is an informational website that helps homeowners connect with local plumbing service providers for emergency plumbing and general plumbing services in the Houston area.",
   },
   {
-    q: "How quickly can an emergency plumber arrive?",
-    a: "Response time depends on your location, traffic and technician availability. Most emergency plumbing requests are handled as quickly as possible.",
+    q: "Is emergency plumbing assistance available 24/7?",
+    a: "Emergency service requests can be submitted at any time. Actual availability depends on the local plumbing service provider and your location.",
   },
   {
-    q: "What plumbing services do you provide?",
-    a: "We help with emergency plumbing, drain cleaning, leak detection, sewer line repair, water heater repair, pipe repair, toilet repair, faucet repair and residential plumbing services.",
+    q: "What plumbing services can I request?",
+    a: "You can request help with emergency plumbing, drain cleaning, leak detection, sewer line services, water heater repair, pipe repair, faucet repair, toilet repair and other residential or commercial plumbing needs.",
   },
   {
-    q: "Do you provide same-day plumbing service?",
-    a: "Yes. Same-day service is available for many plumbing repairs depending on scheduling and technician availability.",
+    q: "How quickly can a plumber arrive?",
+    a: "Response times vary based on your location, traffic conditions, the time of day and the availability of the selected plumbing service provider.",
   },
   {
-    q: "Are your plumbing professionals licensed and insured?",
-    a: "Yes. We work with licensed and insured plumbing professionals who meet local service requirements.",
+    q: "Do you guarantee pricing or service availability?",
+    a: "No. Pricing, scheduling, warranties and service availability are determined by the plumbing service provider you are connected with.",
   },
   {
-    q: "Can I request a free plumbing estimate?",
-    a: "Yes. You can call us or submit the contact form to request a free estimate for your plumbing service.",
+    q: "How do I request plumbing service?",
+    a: "You can call the phone number listed on this website or submit the contact form. We'll help connect you with a local plumbing service provider based on your request.",
   },
 ];
+
 export default function FAQ() {
-    const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(0);
 
-    return (
-        <section className="bg-slate-50 py-24">
+  return (
+    <section className="bg-slate-50 py-24">
+      <div className="container-custom">
+        {/* Heading */}
 
-            <div className="container-custom">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="rounded-full bg-blue-100 px-5 py-2 text-sm font-bold text-blue-600">
+            FREQUENTLY ASKED QUESTIONS
+          </span>
 
-               <div className="mx-auto max-w-3xl text-center">
+          <h2 className="mt-6 text-4xl font-black text-slate-900 lg:text-5xl">
+            Plumbing Questions & Answers
+          </h2>
 
-    <span className="rounded-full bg-blue-100 px-5 py-2 text-sm font-bold text-blue-600">
-        PLUMBING FAQ
-    </span>
-
-    <h2 className="mt-6 text-4xl font-black text-slate-900 lg:text-5xl">
-        Frequently Asked Plumbing Questions
-    </h2>
-
-    <p className="mt-6 text-lg leading-8 text-slate-600">
-        Find answers to common questions about emergency plumbing, drain cleaning,
-        leak detection, water heater repair and plumbing services in Houston.
-    </p>
-
-</div>
-
-                <div className="mt-20 grid gap-10 lg:grid-cols-3">
-
-                    <div className="space-y-6 lg:col-span-2">
-
-                        {faqs.map((item, index) => (
-
-                            <div
-    key={item.q}
-    className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition-all duration-300 hover:border-blue-600 hover:shadow-xl"
->
-                                <button
-                                    onClick={() => setOpen(open === index ? -1 : index)}
-                                    className="flex w-full items-center justify-between p-7 text-left"
-                                >
-
-                                    <span className="text-lg font-bold text-slate-900">
-                                        {item.q}
-                                    </span>
-
-                                    <ChevronDown
-                                        size={24}
-                                        className={`transition duration-300 ${open === index ? "rotate-180 text-blue-600" : ""
-                                            }`}
-                                    />
-
-                                </button>
-
-                                {open === index && (
-    <div className="animate-in fade-in duration-300 border-t border-slate-100 px-7 pb-7 pt-5 leading-8 text-slate-600">
-        {item.a}
-    </div>
-
-                                )}
-
-                            </div>
-
-                        ))}
-
-                    </div>
-
-                    <div className="overflow-hidden rounded-[32px] bg-white shadow-2xl">
-
-    <div className="relative h-64">
-
-        <Image
-            src="/images/emergency.png"
-            alt="Emergency plumbing service in Houston"
-            fill
-            quality={75}
-            sizes="(max-width:1024px)100vw,33vw"
-            className="object-cover"
-        />
-
-    </div>
-
-    <div className="bg-gradient-to-b from-blue-700 to-blue-500 p-8 text-white">
-
-        <Phone size={42} />
-
-        <h3 className="mt-6 text-3xl font-black">
-            Need Emergency Plumbing?
-        </h3>
-
-        <p className="mt-5 leading-8 text-blue-100">
-            Available 24/7 for emergency plumbing, drain cleaning,
-            leak detection and water heater services.
-        </p>
-
-        <div className="mt-8 space-y-5">
-
-            <div className="flex items-center gap-3">
-                <Clock3 size={22} />
-                <span>24/7 Emergency Response</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-                <ShieldCheck size={22} />
-                <span>Licensed & Insured</span>
-            </div>
-
+          <p className="mt-6 text-lg leading-8 text-slate-600">
+            Learn more about requesting plumbing services through Pipe Rescue
+            and how we help homeowners connect with local plumbing service
+            providers.
+          </p>
         </div>
 
-        <div className="mt-10 space-y-4">
+        <div className="mt-20 grid gap-10 lg:grid-cols-3">
+          {/* FAQ */}
 
-            <a
-                href={`tel:${siteConfig.phone}`}
-                className="flex w-full items-center justify-center rounded-full bg-white py-4 text-lg font-bold text-blue-700 transition hover:bg-slate-100"
-            >
-                📞 {siteConfig.phoneDisplay}
-            </a>
+          <div className="space-y-6 lg:col-span-2">
+            {faqs.map((item, index) => (
+              <div
+                key={item.q}
+                className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition-all duration-300 hover:border-blue-600 hover:shadow-xl"
+              >
+                <button
+                  onClick={() => setOpen(open === index ? -1 : index)}
+                  className="flex w-full items-center justify-between p-7 text-left"
+                >
+                  <span className="text-lg font-bold text-slate-900">
+                    {item.q}
+                  </span>
 
-            <Link
-                href="/contact"
-                className="flex w-full items-center justify-center rounded-full border-2 border-white py-4 text-lg font-bold text-white transition hover:bg-white hover:text-blue-700"
-            >
-                Request Free Estimate
-            </Link>
+                  <ChevronDown
+                    size={24}
+                    className={`transition duration-300 ${
+                      open === index ? "rotate-180 text-blue-600" : ""
+                    }`}
+                  />
+                </button>
 
-        </div>
+                {open === index && (
+                  <div className="animate-in fade-in duration-300 border-t border-slate-100 px-7 pb-7 pt-5 leading-8 text-slate-600">
+                    {item.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
 
-    </div>
+          {/* CTA */}
 
-</div>
+          <div className="overflow-hidden rounded-[32px] bg-white shadow-2xl">
+            <div className="relative h-64">
+              <Image
+                src="/images/emergency.png"
+                alt="Emergency plumbing services in Houston"
+                fill
+                quality={75}
+                sizes="(max-width:1024px)100vw,33vw"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="bg-gradient-to-b from-blue-700 to-blue-500 p-8 text-white">
+              <Phone size={42} />
+
+              <h3 className="mt-6 text-3xl font-black">
+                Need Plumbing Assistance?
+              </h3>
+
+              <p className="mt-5 leading-8 text-blue-100">
+                Call us or submit a service request to be connected with a local
+                plumbing service provider in the Houston area.
+              </p>
+
+              <div className="mt-8 space-y-5">
+                <div className="flex items-center gap-3">
+                  <Clock3 size={22} />
+                  <span>Emergency Requests Accepted 24/7</span>
                 </div>
 
-            </div>
+                <div className="flex items-center gap-3">
+                  <MapPin size={22} />
+                  <span>Serving Houston & Nearby Areas</span>
+                </div>
+              </div>
 
-        </section>
-    );
+              <div className="mt-10 space-y-4">
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  className="flex w-full items-center justify-center rounded-full bg-white py-4 text-lg font-bold text-blue-700 transition hover:bg-slate-100"
+                >
+                  📞 {siteConfig.phoneDisplay}
+                </a>
+
+                <Link
+                  href="/contact"
+                  className="flex w-full items-center justify-center rounded-full border-2 border-white py-4 text-lg font-bold text-white transition hover:bg-white hover:text-blue-700"
+                >
+                  Request Service
+                </Link>
+              </div>
+
+              <p className="mt-8 text-sm leading-6 text-blue-100">
+                Pipe Rescue helps connect homeowners with local plumbing service
+                providers. Service availability and response times may vary by
+                location.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
