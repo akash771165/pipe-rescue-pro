@@ -211,5 +211,24 @@ export const blogs: BlogPost[] = [
     "Burst Pipe Repair Houston",
     "Houston Emergency Plumber",
   ],
-}
+},
+{
+  slug: "burst-pipe-repair-houston",
+  title: "Burst Pipe Repair in Houston: What to Do Before the Plumber Arrives",
+  description:
+    "Learn what to do immediately after a burst pipe, how to reduce water damage, and when to call an emergency plumber in Houston.",
+  category: "Emergency Plumbing",
+  image: "/images/blog-burst-pipe.jpg",
+  author: "Pipe Rescue Editorial Team",
+  publishedAt: "2026-07-26",
+  updatedAt: "2026-07-26",
+  readingTime: "9 min read",
+  keywords: [
+    "Burst Pipe Repair Houston",
+    "Emergency Plumber Houston",
+    "Water Pipe Burst",
+    "Pipe Leak Repair",
+    "Emergency Plumbing",
+  ],
+},
 ];
