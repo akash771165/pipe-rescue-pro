@@ -38,15 +38,7 @@ export default function Navbar() {
 
             {/* Floating WhatsApp */}
 
-            <a
-                href={`https://wa.me/${siteConfig.whatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Chat on WhatsApp"
-                className="fixed bottom-5 right-5 z-[999] flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-white shadow-2xl transition hover:scale-110"
-            >
-                💬
-            </a>
+           
 
             {/* Top Bar */}
 

@@ -11,10 +11,12 @@ export const siteConfig = {
 
   // Contact
 
-  phone: "+18773267830",
-  phoneDisplay: "(877) 326-7830",
+  phone: "+18773640861",
+  phoneDisplay: "(877) 364-0861",
 
-  whatsapp: "+18773267830",
+  // Leave blank to disable WhatsApp
+
+  whatsapp: "",
 
   email: "resquepipe@gmail.com",
 
