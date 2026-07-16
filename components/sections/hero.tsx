@@ -123,22 +123,22 @@ export default function Hero() {
 
                 <div className="relative">
 
-                    <div className="overflow-hidden rounded-[40px] shadow-2xl">
-<Image
-    src="/images/hero.png"
-    alt="Pipe Rescue Plumbing Services"
-    width={900}
-    height={1100}
-    priority
-    quality={75}
-    sizes="(max-width:768px) 100vw, 50vw"
-    className="h-[420px] w-full object-cover lg:h-[750px]"
-/>
+  <div className="overflow-hidden rounded-[40px] shadow-2xl">
 
-                    </div>
+    <Image
+      src="/images/hero.jpg"
+      alt="Emergency Plumbing Services in Houston"
+      width={1200}
+      height={800}
+      priority
+      quality={90}
+      sizes="(max-width:768px) 100vw, 50vw"
+      className="aspect-[3/2] w-full object-cover lg:h-[650px]"
+    />
 
-                </div>
+  </div>
 
+</div>
             </div>
 
         </section>
