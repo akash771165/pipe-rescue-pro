@@ -183,4 +183,33 @@ export const blogs: BlogPost[] = [
       "Commercial Plumbing Maintenance",
     ],
   },
+  {
+  slug: "emergency-plumber-near-me-houston",
+
+  title: "Emergency Plumber Near Me Houston | 24/7 Plumbing Services",
+
+  description:
+    "Looking for an emergency plumber near you in Houston? Learn what qualifies as a plumbing emergency, what to do before help arrives, and when to call a licensed plumber.",
+
+  category: "Emergency Plumbing",
+
+  image: "/images/service-1.png",
+
+  author: "Pipe Rescue Editorial Team",
+
+  publishedAt: "2026-07-25",
+
+  updatedAt: "2026-07-25",
+
+  readingTime: "10 min read",
+
+  keywords: [
+    "Emergency Plumber Near Me Houston",
+    "Emergency Plumbing Houston",
+    "24 Hour Plumber Houston",
+    "Emergency Plumbing Services",
+    "Burst Pipe Repair Houston",
+    "Houston Emergency Plumber",
+  ],
+}
 ];
