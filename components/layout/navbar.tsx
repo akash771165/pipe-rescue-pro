@@ -4,217 +4,211 @@ import { useState } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config/site";
 import {
-    Menu,
-    X,
-    Phone,
-    Wrench,
-    ChevronDown,
+  Menu,
+  X,
+  Phone,
+  Wrench,
+  ChevronDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-    { title: "Home", href: "/" },
-    { title: "Services", href: "/services" },
-    { title: "Service Areas", href: "/service-areas" },
-    { title: "About", href: "/about" },
-    { title: "Blog", href: "/blog" },
-    { title: "Contact", href: "/contact" },
+  { title: "Home", href: "/" },
+  { title: "Services", href: "/services" },
+  { title: "Service Areas", href: "/service-areas" },
+  { title: "About", href: "/about" },
+  { title: "Blog", href: "/blog" },
+  { title: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    return (
-        <>
-            {/* Floating Call */}
+  return (
+    <>
+      {/* Floating Call */}
 
-            <a
-               href={`tel:${siteConfig.phone}`}
-                aria-label="Call Pipe Rescue"
-                className="fixed bottom-24 right-5 z-[999] flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-white shadow-2xl transition hover:scale-110"
-            >
-                <Phone size={28} />
-            </a>
+      <a
+        href={`tel:${siteConfig.phone}`}
+        aria-label="Call Pipe Rescue"
+        className="fixed bottom-6 right-5 z-[999] flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-white shadow-2xl transition hover:scale-110"
+      >
+        <Phone size={28} />
+      </a>
 
-            {/* Floating WhatsApp */}
+      {/* Top Bar */}
 
-           
+      {/* Top Bar */}
 
-            {/* Top Bar */}
+<div className="bg-blue-700 text-white">
 
-            <div className="bg-blue-700 text-white">
+  <div className="container-custom flex h-10 items-center justify-between text-sm">
 
-                <div className="container-custom flex h-10 items-center justify-between text-sm">
+    <p>
+      🚨 Emergency Plumbing Information & Service Requests
+    </p>
 
-                    <p>
-                        🚨 24/7 Emergency Plumbing Services
-                    </p>
+    <div className="hidden gap-6 md:flex">
 
-                    <div className="hidden gap-6 md:flex">
+      <span>Serving Houston & Surrounding Areas</span>
 
-                        <span>⭐ 5.0 Google Rating</span>
+      <span>24/7 Emergency Assistance</span>
 
-                        <span>Licensed & Insured</span>
+    </div>
 
-                    </div>
+  </div>
 
-                </div>
+</div>
+      {/* Navbar */}
+
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
+
+        <div className="container-custom flex h-24 items-center justify-between">
+
+          {/* Logo */}
+
+          <Link
+            href="/"
+            className="flex items-center gap-4"
+          >
+
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-white">
+
+              <Wrench size={28} />
 
             </div>
 
-            {/* Navbar */}
+            <div>
 
-            <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-xl">
+              <h2 className="text-2xl font-black">
+                {siteConfig.company}
+              </h2>
 
-                <div className="container-custom flex h-24 items-center justify-between">
+              <p className="text-xs text-slate-500">
+  Houston Plumbing Services
+</p>
+            </div>
 
-                    {/* Logo */}
+          </Link>
 
-                    <Link
-                        href="/"
-                        className="flex items-center gap-4"
-                    >
+          {/* Desktop */}
 
-                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-white">
+          <nav className="hidden items-center gap-8 xl:flex">
 
-                            <Wrench size={28} />
+            {navLinks.map((item) => (
 
-                        </div>
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex items-center gap-1 font-semibold text-slate-700 transition hover:text-blue-600"
+              >
 
-                        <div>
+                {item.title}
 
-                            <h2 className="text-2xl font-black">
-                               {siteConfig.company}
-                            </h2>
-
-                            <p className="text-xs text-slate-500">
-                                24/7 Emergency Plumbing
-                            </p>
-
-                        </div>
-
-                    </Link>
-
-                    {/* Desktop */}
-
-                    <nav className="hidden items-center gap-8 xl:flex">
-
-                        {navLinks.map((item) => (
-
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                className="flex items-center gap-1 font-semibold text-slate-700 transition hover:text-blue-600"
-                            >
-
-                                {item.title}
-
-                                {item.title === "Services" && (
-                                    <ChevronDown size={16} />
-                                )}
-
-                            </Link>
-
-                        ))}
-
-                    </nav>
-
-                    {/* CTA */}
-
-                    <div className="hidden items-center gap-4 lg:flex">
-
-                       <a href={`tel:${siteConfig.phone}`}>
-
-                            <Button
-                                variant="outline"
-                                className="rounded-full border-2 px-6"
-                            >
-
-                                <Phone className="mr-2 h-4 w-4" />
-
-                               {siteConfig.phoneDisplay}
-
-                            </Button>
-
-                        </a>
-
-                        <Link href="/contact">
-
-                            <Button className="rounded-full bg-blue-600 px-7 hover:bg-blue-700">
-
-                                Free Estimate
-
-                            </Button>
-
-                        </Link>
-
-                    </div>
-
-                    {/* Mobile Button */}
-
-                    <button
-                        onClick={() => setOpen(!open)}
-                        className="rounded-xl border p-3 lg:hidden"
-                    >
-
-                        {open ? <X /> : <Menu />}
-
-                    </button>
-
-                </div>
-
-                {/* Mobile Menu */}
-
-                {open && (
-
-                    <div className="border-t bg-white lg:hidden">
-
-                        <div className="container-custom py-6">
-
-                            <nav className="flex flex-col gap-5">
-
-                                {navLinks.map((item) => (
-
-                                    <Link
-                                        key={item.href}
-                                        href={item.href}
-                                        onClick={() => setOpen(false)}
-                                        className="border-b pb-4 text-lg font-semibold"
-                                    >
-                                        {item.title}
-                                    </Link>
-
-                                ))}
-
-                                <a
-                                    href={`tel:${siteConfig.phone}`}
-                                    className="rounded-full border border-blue-600 py-3 text-center font-bold text-blue-600"
-                                >
-                                   📞 {siteConfig.phoneDisplay}
-                                </a>
-
-                                
-
-                                <Link href="/contact">
-
-                                    <Button className="mt-2 w-full rounded-full bg-blue-600">
-
-                                        Free Estimate
-
-                                    </Button>
-
-                                </Link>
-
-                            </nav>
-
-                        </div>
-
-                    </div>
-
+                {item.title === "Services" && (
+                  <ChevronDown size={16} />
                 )}
 
-            </header>
+              </Link>
 
-        </>
-    );
+            ))}
+
+          </nav>
+
+          {/* CTA */}
+
+          <div className="hidden items-center gap-4 lg:flex">
+
+            <a href={`tel:${siteConfig.phone}`}>
+
+              <Button
+                variant="outline"
+                className="rounded-full border-2 px-6"
+              >
+
+                <Phone className="mr-2 h-4 w-4" />
+
+                {siteConfig.phoneDisplay}
+
+              </Button>
+
+            </a>
+
+            <Link href="/contact">
+
+              <Button className="rounded-full bg-blue-600 px-7 hover:bg-blue-700">
+
+                Get Connected
+
+              </Button>
+
+            </Link>
+
+          </div>
+
+          {/* Mobile */}
+
+          <button
+            onClick={() => setOpen(!open)}
+            className="rounded-xl border p-3 lg:hidden"
+          >
+
+            {open ? <X /> : <Menu />}
+
+          </button>
+
+        </div>
+
+        {/* Mobile Menu */}
+
+        {open && (
+
+          <div className="border-t bg-white lg:hidden">
+
+            <div className="container-custom py-6">
+
+              <nav className="flex flex-col gap-5">
+
+                {navLinks.map((item) => (
+
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="border-b pb-4 text-lg font-semibold"
+                  >
+                    {item.title}
+                  </Link>
+
+                ))}
+
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  className="rounded-full border border-blue-600 py-3 text-center font-bold text-blue-600"
+                >
+                  📞 {siteConfig.phoneDisplay}
+                </a>
+
+                <Link href="/contact">
+
+                  <Button className="mt-2 w-full rounded-full bg-blue-600">
+
+                    Request Service
+
+                  </Button>
+
+                </Link>
+
+              </nav>
+
+            </div>
+
+          </div>
+
+        )}
+
+      </header>
+
+    </>
+  );
 }
