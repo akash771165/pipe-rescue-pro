@@ -13,8 +13,11 @@ export default function Hero() {
       </div>
 
       <div className="container-custom relative z-10 grid min-h-[85vh] items-center gap-16 py-16 lg:min-h-screen lg:grid-cols-2 lg:gap-20 lg:py-24">
+
         {/* LEFT */}
+
         <div>
+
           <span className="inline-flex items-center rounded-full border border-red-200 bg-red-50 px-5 py-2 text-sm font-semibold text-red-600">
             🚨 24/7 Emergency Plumbing Assistance
           </span>
@@ -30,17 +33,20 @@ export default function Hero() {
           <p className="mt-8 max-w-2xl text-xl leading-9 text-slate-600">
             Pipe Rescue helps homeowners connect with local plumbing
             professionals for emergency plumbing, drain cleaning, leak
-            detection, water heater repair, sewer line services, and general
-            residential plumbing throughout the Houston area.
+            detection, water heater repair, sewer line services, and
+            residential or commercial plumbing assistance throughout
+            Houston and nearby communities.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA */}
+
           <div className="mt-10 flex flex-wrap gap-5">
+
             <Link
               href="/contact"
               className="rounded-full bg-blue-600 px-10 py-5 font-bold text-white transition hover:scale-105 hover:bg-blue-700"
             >
-              Request Service
+              Request Assistance
             </Link>
 
             <a
@@ -49,37 +55,47 @@ export default function Hero() {
             >
               📞 {siteConfig.phoneDisplay}
             </a>
+
           </div>
 
-          <p className="mt-4 text-sm font-semibold text-red-600">
-            Need plumbing help? Contact us today.
+          <p className="mt-5 text-sm font-semibold text-red-600">
+            Need plumbing assistance? Contact us anytime.
           </p>
 
-          {/* Quick Highlights */}
+          {/* Highlights */}
+
           <div className="mt-12 grid grid-cols-2 gap-5 lg:grid-cols-4">
+
             {[
-              ["24/7", "Emergency Support"],
-              ["Same Day", "Service Available"],
-              ["Local", "Professionals"],
+              ["24/7", "Emergency Assistance"],
               ["Houston", "Service Area"],
+              ["Residential", "Plumbing"],
+              ["Commercial", "Plumbing"],
             ].map(([title, label]) => (
+
               <div
                 key={label}
                 className="rounded-2xl bg-white p-5 text-center shadow-lg"
               >
+
                 <h3 className="text-3xl font-black text-blue-600">
                   {title}
                 </h3>
 
-                <p className="text-slate-600">
+                <p className="mt-2 text-slate-600">
                   {label}
                 </p>
+
               </div>
+
             ))}
+
           </div>
 
           {/* Services */}
-          <div className="mt-8 flex flex-wrap gap-3">
+
+          <div className="mt-10 flex flex-wrap gap-3">
+
             {[
               "Emergency Plumbing",
               "Drain Cleaning",
@@ -87,23 +103,28 @@ export default function Hero() {
               "Water Heater Repair",
               "Sewer Line Services",
             ].map((service) => (
+
               <span
                 key={service}
                 className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700"
               >
                 {service}
               </span>
+
             ))}
+
           </div>
 
-          {/* Trust Badges */}
+          {/* Service Categories */}
+
           <div className="mt-10 flex flex-wrap gap-4">
+
             <span className="rounded-full bg-green-100 px-4 py-2 font-semibold text-green-700">
-              ✔ Fast Response
+              ✔ Emergency Plumbing
             </span>
 
             <span className="rounded-full bg-green-100 px-4 py-2 font-semibold text-green-700">
-              ✔ Transparent Estimates
+              ✔ Drain Cleaning
             </span>
 
             <span className="rounded-full bg-green-100 px-4 py-2 font-semibold text-green-700">
@@ -113,17 +134,25 @@ export default function Hero() {
             <span className="rounded-full bg-green-100 px-4 py-2 font-semibold text-green-700">
               ✔ Emergency Assistance
             </span>
+
           </div>
+
+          {/* Disclaimer */}
 
           <p className="mt-6 max-w-2xl text-sm leading-6 text-slate-500">
             Pipe Rescue helps connect homeowners with local plumbing service
-            providers. Service availability may vary by location.
+            providers. Services and availability may vary depending on
+            location and provider availability.
           </p>
+
         </div>
 
         {/* RIGHT */}
+
         <div className="relative">
+
           <div className="overflow-hidden rounded-[40px] shadow-2xl">
+
             <Image
               src="/images/hero.jpg"
               alt="Emergency plumbing services in Houston, Texas"
@@ -134,8 +163,11 @@ export default function Hero() {
               sizes="(max-width:768px) 100vw, 50vw"
               className="aspect-[3/2] w-full object-cover lg:h-[650px]"
             />
+
           </div>
+
         </div>
+
       </div>
     </section>
   );

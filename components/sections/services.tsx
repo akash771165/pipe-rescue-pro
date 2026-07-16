@@ -9,37 +9,37 @@ const services = [
   {
     title: "Emergency Plumbing",
     image: "/images/service-1.png",
-    desc: "Fast 24/7 emergency plumbing repairs for burst pipes, overflowing toilets, leaks, and urgent plumbing issues.",
+    desc: "Emergency plumbing assistance for burst pipes, leaks, overflowing toilets and other urgent plumbing problems.",
     href: "/services/emergency-plumbing",
   },
   {
     title: "Drain Cleaning",
     image: "/images/service-2.png",
-    desc: "Professional drain cleaning services to remove stubborn clogs and restore proper water flow.",
+    desc: "Drain cleaning services to help restore proper drainage for sinks, tubs, showers and sewer lines.",
     href: "/services/drain-cleaning",
   },
   {
     title: "Leak Detection",
     image: "/images/service-3.png",
-    desc: "Accurate leak detection using modern equipment to prevent costly water damage.",
+    desc: "Leak detection services for hidden water leaks, slab leaks and plumbing system inspections.",
     href: "/services/leak-detection",
   },
   {
-    title: "Water Heater Repair",
+    title: "Water Heater Services",
     image: "/images/service-1.png",
-    desc: "Water heater repair, replacement and installation for residential and commercial properties.",
+    desc: "Water heater repair, replacement and installation services for residential and commercial properties.",
     href: "/services/water-heater-repair",
   },
   {
-    title: "Sewer Line Repair",
+    title: "Sewer Line Services",
     image: "/images/service-2.png",
-    desc: "Complete sewer line inspection, repair and replacement by experienced plumbing professionals.",
+    desc: "Sewer line inspection, repair and replacement services performed by local plumbing providers.",
     href: "/services/sewer-line-repair",
   },
   {
     title: "Residential Plumbing",
     image: "/images/service-3.png",
-    desc: "Complete plumbing services for homes including repairs, installations and maintenance.",
+    desc: "General residential plumbing services including repairs, maintenance and plumbing installations.",
     href: "/services/residential-plumbing",
   },
 ];
@@ -55,30 +55,31 @@ export default function Services() {
         <div className="mx-auto max-w-3xl text-center">
 
           <span className="rounded-full bg-blue-100 px-5 py-2 text-sm font-bold text-blue-600">
-            OUR SERVICES
+            PLUMBING SERVICES
           </span>
 
           <h2 className="mt-6 text-4xl font-black text-slate-900 lg:text-5xl">
-            Professional Plumbing Services in Houston, TX
+            Plumbing Services Available in Houston
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            From emergency plumbing repairs to drain cleaning, leak detection,
-            sewer repair and water heater services, Pipe Rescue connects you
-            with licensed plumbing professionals across Houston.
+            Pipe Rescue helps homeowners and businesses connect with
+            independent plumbing service providers offering emergency plumbing,
+            drain cleaning, leak detection, sewer line services, water heater
+            repair and other plumbing solutions throughout the Houston area.
           </p>
 
         </div>
 
-        {/* Cards */}
+        {/* Service Cards */}
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
           {services.map((service) => (
 
-            <div
+            <article
               key={service.title}
-              className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-blue-600 hover:shadow-2xl"
+              className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition duration-300 hover:-translate-y-2 hover:border-blue-600 hover:shadow-2xl"
             >
 
               <div className="relative h-64 overflow-hidden">
@@ -87,9 +88,9 @@ export default function Services() {
                   src={service.image}
                   alt={service.title}
                   fill
-                  quality={75}
+                  quality={90}
                   sizes="(max-width:768px)100vw,(max-width:1200px)50vw,33vw"
-                  className="object-cover transition duration-500 group-hover:scale-110"
+                  className="object-cover transition duration-500 group-hover:scale-105"
                 />
 
               </div>
@@ -107,18 +108,36 @@ export default function Services() {
                 <div className="mt-6 space-y-3">
 
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600" />
-                    <span>Licensed & Insured</span>
+
+                    <CheckCircle2
+                      size={18}
+                      className="text-green-600"
+                    />
+
+                    <span>Residential & Commercial</span>
+
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600" />
-                    <span>Upfront Pricing</span>
+
+                    <CheckCircle2
+                      size={18}
+                      className="text-green-600"
+                    />
+
+                    <span>Service Requests Accepted 24/7</span>
+
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-600" />
-                    <span>24/7 Emergency Support</span>
+
+                    <CheckCircle2
+                      size={18}
+                      className="text-green-600"
+                    />
+
+                    <span>Houston & Nearby Areas</span>
+
                   </div>
 
                 </div>
@@ -129,7 +148,7 @@ export default function Services() {
                     href={service.href}
                     className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-700"
                   >
-                    View Service
+                    Learn More
                     <ArrowRight size={18} />
                   </Link>
 
@@ -145,9 +164,27 @@ export default function Services() {
 
               </div>
 
-            </div>
+            </article>
 
           ))}
+
+        </div>
+
+        {/* Disclaimer */}
+
+        <div className="mt-16 rounded-3xl border border-blue-100 bg-blue-50 p-8">
+
+          <h3 className="text-2xl font-bold text-slate-900">
+            Important Information
+          </h3>
+
+          <p className="mt-4 leading-8 text-slate-600">
+            Pipe Rescue is an informational website that helps users connect
+            with independent plumbing service providers. Plumbing services,
+            scheduling, pricing, warranties and response times are provided by
+            the selected service provider and may vary depending on location and
+            availability.
+          </p>
 
         </div>
 
