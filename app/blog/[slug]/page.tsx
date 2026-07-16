@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { blogContent } from "@/lib/data/blog-content";
 
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
@@ -80,7 +81,8 @@ export default async function BlogArticle({
   const related = blogs
     .filter((item) => item.slug !== blog.slug)
     .slice(0, 3);
-
+const article =
+  blogContent[slug as keyof typeof blogContent];
   return (
     <main className="overflow-x-hidden bg-white">
 
@@ -136,41 +138,104 @@ export default async function BlogArticle({
               {blog.description}
             </p>
 
-            <div className="prose prose-lg mt-12 max-w-none">
+          <div className="mt-12">
 
-              <h2>Why This Matters</h2>
+  {article ? (
+    <>
 
-              <p>
-                Plumbing emergencies can happen at any time. Acting quickly can
-                help reduce property damage and expensive repairs.
-              </p>
+      {article.introduction.map((paragraph, index) => (
 
-              <h2>Common Signs</h2>
+        <p
+          key={index}
+          className="mb-6 text-lg leading-8 text-slate-700"
+        >
+          {paragraph}
+        </p>
 
-              <ul>
-                <li>Low water pressure</li>
-                <li>Water leaks</li>
-                <li>Burst pipes</li>
-                <li>Slow drains</li>
-                <li>Overflowing toilets</li>
-              </ul>
+      ))}
 
-              <h2>Professional Recommendation</h2>
+      {article.sections.map((section) => (
 
-              <p>
-                Always work with licensed plumbing professionals who provide
-                upfront pricing and emergency services.
-              </p>
+        <section
+          key={section.id}
+          className="mt-14"
+        >
 
-              <h2>Conclusion</h2>
+          <h2 className="mb-6 text-3xl font-black">
+            {section.title}
+          </h2>
 
-              <p>
-                Regular maintenance and fast response to plumbing issues can
-                prevent costly damage and keep your plumbing system operating
-                efficiently.
-              </p>
+          {section.content.map((paragraph, index) => (
 
-            </div>
+            <p
+              key={index}
+              className="mb-6 leading-8 text-slate-700"
+            >
+              {paragraph}
+            </p>
+
+          ))}
+
+        </section>
+
+      ))}
+
+      <section className="mt-16 rounded-3xl bg-blue-600 p-10 text-white">
+
+        <h2 className="text-3xl font-black">
+          {article.callToAction.title}
+        </h2>
+
+        <p className="mt-4 text-lg">
+          {article.callToAction.description}
+        </p>
+
+        <a
+          href="tel:+18773640861"
+          className="mt-8 inline-block rounded-full bg-white px-8 py-4 font-bold text-blue-700"
+        >
+          📞 {article.callToAction.phone}
+        </a>
+
+      </section>
+
+      <section className="mt-16">
+
+        <h2 className="mb-8 text-3xl font-black">
+          Frequently Asked Questions
+        </h2>
+
+        {article.faqs.map((faq, index) => (
+
+          <div
+            key={index}
+            className="mb-6 rounded-2xl border p-6"
+          >
+
+            <h3 className="text-xl font-bold">
+              {faq.question}
+            </h3>
+
+            <p className="mt-3 leading-8 text-slate-600">
+              {faq.answer}
+            </p>
+
+          </div>
+
+        ))}
+
+      </section>
+
+    </>
+  ) : (
+
+    <p className="text-lg text-slate-700">
+      Full article coming soon.
+    </p>
+
+  )}
+
+</div>
 
           </div>
 
