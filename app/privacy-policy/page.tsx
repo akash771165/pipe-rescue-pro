@@ -108,17 +108,43 @@ export default function PrivacyPolicyPage() {
                             please contact Pipe Rescue.
                         </p>
 
-                        <div className="mt-16 rounded-3xl bg-slate-100 p-8">
+                       <div className="mt-16 rounded-3xl border border-blue-200 bg-blue-50 p-8">
 
-                            <p className="font-bold">
-                                Last Updated
-                            </p>
+    <h3 className="text-2xl font-black text-slate-900">
+        Website Ownership Verification
+    </h3>
 
-                            <p className="mt-2 text-slate-600">
-                                January 2026
-                            </p>
+    <p className="mt-5 leading-8 text-slate-700">
+        This website (<strong>www.piperesque.com</strong>) is owned and
+        managed by <strong>Mohit Parmar</strong>.
+    </p>
 
-                        </div>
+    <p className="mt-4 leading-8 text-slate-700">
+        This website is used for SEO-based inbound lead generation for home
+        services and is actively maintained by the website owner.
+    </p>
+
+    <div className="mt-8 border-t border-blue-200 pt-6">
+
+        <p className="font-bold">
+            Website Owner
+        </p>
+
+        <p className="text-slate-600">
+            Mohit Parmar
+        </p>
+
+        <p className="mt-5 font-bold">
+            Last Updated
+        </p>
+
+        <p className="text-slate-600">
+            July 16, 2026
+        </p>
+
+    </div>
+
+</div>
 
                     </div>
 
