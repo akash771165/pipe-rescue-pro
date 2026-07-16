@@ -3,8 +3,10 @@ type Props = {
 };
 
 export default function TableOfContents({ items }: Props) {
+  if (items.length === 0) return null;
+
   return (
-    <aside className="rounded-3xl border border-slate-200 bg-slate-50 p-8">
+    <aside className="sticky top-28 rounded-3xl border border-slate-200 bg-slate-50 p-8">
 
       <h2 className="text-2xl font-black">
         Table of Contents
@@ -14,23 +16,29 @@ export default function TableOfContents({ items }: Props) {
 
         <ul className="space-y-4">
 
-          {items.map((item) => (
+          {items.map((item) => {
 
-            <li key={item}>
+            const id = item
+              .toLowerCase()
+              .replace(/[^a-z0-9 ]/g, "")
+              .replace(/\s+/g, "-");
 
-              <a
-                href={`#${item
-                  .toLowerCase()
-                  .replace(/[^a-z0-9 ]/g, "")
-                  .replace(/\s+/g, "-")}`}
-                className="text-slate-600 transition hover:text-blue-600"
-              >
-                {item}
-              </a>
+            return (
 
-            </li>
+              <li key={id}>
 
-          ))}
+                <a
+                  href={`#${id}`}
+                  className="transition hover:text-blue-600 text-slate-600"
+                >
+                  {item}
+                </a>
+
+              </li>
+
+            );
+
+          })}
 
         </ul>
 
