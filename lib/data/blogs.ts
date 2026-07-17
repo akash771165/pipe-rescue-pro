@@ -260,4 +260,24 @@ export const blogs: BlogPost[] = [
     "Plumbing Leak Repair Houston",
   ],
 },
+{
+  slug: "hydro-jetting-houston",
+  title: "Hydro Jetting Houston: When Is It the Best Solution for Clogged Drains?",
+  description:
+    "Learn how hydro jetting works, when it is recommended, its benefits, costs, and how it helps clear stubborn drain and sewer line blockages in Houston.",
+  category: "Drain Cleaning",
+  image: "/images/service-2.png",
+  author: "Pipe Rescue Editorial Team",
+  publishedAt: "2026-07-28",
+  updatedAt: "2026-07-28",
+  readingTime: "11 min read",
+  keywords: [
+    "Hydro Jetting Houston",
+    "Hydro Jet Drain Cleaning",
+    "Sewer Line Cleaning Houston",
+    "Drain Cleaning Houston",
+    "High Pressure Drain Cleaning",
+    "Hydro Jet Plumbing",
+  ],
+},
 ];
