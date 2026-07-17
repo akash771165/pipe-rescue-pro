@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 
 import Navbar from "@/components/layout/navbar";
 import Hero from "@/components/sections/hero";
-import Services from "@/components/sections/services";
-import WhyUs from "@/components/sections/why-us";
-import Stats from "@/components/sections/stats";
-import Testimonials from "@/components/sections/testimonials";
-import FAQ from "@/components/sections/faq";
-import CTA from "@/components/sections/cta";
 import Footer from "@/components/layout/footer";
+
+const Services = dynamic(() => import("@/components/sections/services"));
+const WhyUs = dynamic(() => import("@/components/sections/why-us"));
+const Stats = dynamic(() => import("@/components/sections/stats"));
+const Testimonials = dynamic(
+  () => import("@/components/sections/testimonials")
+);
+const FAQ = dynamic(() => import("@/components/sections/faq"));
+const CTA = dynamic(() => import("@/components/sections/cta"));
 
 export const metadata: Metadata = {
   title: "24/7 Emergency Plumbing Services in Houston, TX",
@@ -59,7 +63,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="overflow-x-hidden bg-white">
-
       <Navbar />
 
       <Hero />
@@ -77,7 +80,6 @@ export default function Home() {
       <CTA />
 
       <Footer />
-
     </main>
   );
 }
