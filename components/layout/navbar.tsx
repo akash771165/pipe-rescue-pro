@@ -26,11 +26,11 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Floating Call */}
+           {/* Floating Call */}
 
       <a
         href={`tel:${siteConfig.phone}`}
-        aria-label="Call Pipe Rescue"
+        aria-label={`Call ${siteConfig.company}`}
         className="fixed bottom-6 right-5 z-[999] flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-white shadow-2xl transition hover:scale-110"
       >
         <Phone size={28} />
@@ -43,7 +43,7 @@ export default function Navbar() {
           <p>🚨 24/7 Emergency Plumbing Assistance</p>
 
           <div className="hidden gap-6 md:flex">
-            <span>Serving Houston & Surrounding Areas</span>
+            <span>Serving Houston &amp; Surrounding Areas</span>
             <span>Emergency Assistance Available 24/7</span>
           </div>
         </div>
@@ -57,6 +57,7 @@ export default function Navbar() {
 
           <Link
             href="/"
+            aria-label={`${siteConfig.company} Home`}
             className="flex items-center gap-4"
           >
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-white">
@@ -76,7 +77,10 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
 
-          <nav className="hidden items-center gap-8 xl:flex">
+          <nav
+            aria-label="Main Navigation"
+            className="hidden items-center gap-8 xl:flex"
+          >
             {navLinks.map((item) => (
               <Link
                 key={item.href}
@@ -86,7 +90,10 @@ export default function Navbar() {
                 {item.title}
 
                 {item.title === "Services" && (
-                  <ChevronDown size={16} />
+                  <ChevronDown
+                    size={16}
+                    aria-hidden="true"
+                  />
                 )}
               </Link>
             ))}
@@ -95,7 +102,10 @@ export default function Navbar() {
           {/* Desktop CTA */}
 
           <div className="hidden items-center gap-4 lg:flex">
-            <a href={`tel:${siteConfig.phone}`}>
+            <a
+              href={`tel:${siteConfig.phone}`}
+              aria-label={`Call ${siteConfig.company}`}
+            >
               <Button
                 variant="outline"
                 className="rounded-full border-2 px-6"
@@ -115,7 +125,11 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
 
           <button
+            type="button"
             onClick={() => setOpen(!open)}
+            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
             className="rounded-xl border p-3 lg:hidden"
           >
             {open ? <X /> : <Menu />}
@@ -125,9 +139,15 @@ export default function Navbar() {
         {/* Mobile Menu */}
 
         {open && (
-          <div className="border-t bg-white lg:hidden">
+          <div
+            id="mobile-navigation"
+            className="border-t bg-white lg:hidden"
+          >
             <div className="container-custom py-6">
-              <nav className="flex flex-col gap-5">
+              <nav
+                aria-label="Mobile Navigation"
+                className="flex flex-col gap-5"
+              >
                 {navLinks.map((item) => (
                   <Link
                     key={item.href}
@@ -141,6 +161,7 @@ export default function Navbar() {
 
                 <a
                   href={`tel:${siteConfig.phone}`}
+                  aria-label={`Call ${siteConfig.company}`}
                   className="rounded-full border border-blue-600 py-3 text-center font-bold text-blue-600"
                 >
                   📞 {siteConfig.phoneDisplay}

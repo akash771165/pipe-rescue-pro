@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Phone,
   Clock3,
@@ -51,14 +49,11 @@ const benefits = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-slate-50 py-24">
-
+       <section className="bg-slate-50 py-24">
       <div className="container-custom">
-
         {/* Heading */}
 
         <div className="mx-auto max-w-3xl text-center">
-
           <span className="rounded-full bg-blue-100 px-5 py-2 text-sm font-bold text-blue-600">
             HOW PIPE RESCUE WORKS
           </span>
@@ -73,28 +68,24 @@ export default function Testimonials() {
             leak detection, water heater repair, sewer line services, and other
             plumbing needs throughout Houston and nearby communities.
           </p>
-
         </div>
 
         {/* Cards */}
 
         <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
           {benefits.map((item) => {
-
             const Icon = item.icon;
 
             return (
-
               <div
                 key={item.title}
                 className="rounded-3xl border border-slate-200 bg-white p-10 shadow-lg transition hover:-translate-y-2 hover:shadow-xl"
               >
-
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100 text-blue-600">
-
-                  <Icon size={30} />
-
+                  <Icon
+                    size={30}
+                    aria-hidden="true"
+                  />
                 </div>
 
                 <h3 className="mt-8 text-2xl font-bold text-slate-900">
@@ -104,19 +95,14 @@ export default function Testimonials() {
                 <p className="mt-5 leading-8 text-slate-600">
                   {item.description}
                 </p>
-
               </div>
-
             );
-
           })}
-
         </div>
 
         {/* Information */}
 
         <div className="mt-16 rounded-3xl border border-blue-100 bg-blue-50 p-8">
-
           <h3 className="text-2xl font-bold text-slate-900">
             Important Information
           </h3>
@@ -128,13 +114,11 @@ export default function Testimonials() {
             times, scheduling, pricing, and coverage may vary depending on
             provider availability and your location.
           </p>
-
         </div>
 
         {/* CTA */}
 
         <div className="mt-20 rounded-[32px] bg-blue-600 p-10 text-center text-white">
-
           <h3 className="text-3xl font-black lg:text-4xl">
             Need Plumbing Assistance?
           </h3>
@@ -146,16 +130,17 @@ export default function Testimonials() {
 
           <a
             href={`tel:${siteConfig.phone}`}
+            aria-label={`Call ${siteConfig.company}`}
             className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-bold text-blue-700 transition hover:bg-slate-100"
           >
-            <Phone size={20} />
+            <Phone
+              size={20}
+              aria-hidden="true"
+            />
             {siteConfig.phoneDisplay}
           </a>
-
         </div>
-
       </div>
-
     </section>
   );
 }

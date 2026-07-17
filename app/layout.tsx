@@ -1,27 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
-import LocalBusinessSchema from "@/components/seo/local-business-schema";
-import {
-  GoogleAnalytics,
-  GoogleTagManager,
-} from "@next/third-parties/google";
+import { Geist, Inter } from "next/font/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+
 import "./globals.css";
+
 import ClarityProvider from "@/components/providers/clarity";
+import LocalBusinessSchema from "@/components/seo/local-business-schema";
 import { siteConfig } from "@/lib/config/site";
 
 const geist = Geist({
   variable: "--font-geist",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -133,62 +129,6 @@ export const viewport: Viewport = {
   themeColor: "#2563eb",
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Plumber",
-
-  "@id": `${siteConfig.website}/#organization`,
-
-  name: siteConfig.company,
-
-  url: siteConfig.website,
-
-  logo: `${siteConfig.website}${siteConfig.logo}`,
-
-  image: `${siteConfig.website}${siteConfig.ogImage}`,
-
-  telephone: siteConfig.phone,
-
-  email: siteConfig.email,
-
-  priceRange: "$$",
-
-  description:
-    "24/7 Emergency Plumbing, Drain Cleaning, Leak Detection, Sewer Repair and Water Heater Services in Houston, Texas.",
-
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: siteConfig.city,
-    addressRegion: siteConfig.stateCode,
-    addressCountry: siteConfig.countryCode,
-  },
-
-  areaServed: [
-    {
-      "@type": "City",
-      name: siteConfig.city,
-    },
-  ],
-
-  openingHours: siteConfig.openingHours,
-
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: siteConfig.phone,
-    contactType: "customer service",
-    areaServed: "US",
-    availableLanguage: "English",
-  },
-
-  sameAs: [
-    siteConfig.facebook,
-    siteConfig.instagram,
-    siteConfig.linkedin,
-    siteConfig.youtube,
-    siteConfig.x,
-  ].filter(Boolean),
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -196,19 +136,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <LocalBusinessSchema />
       <body
         suppressHydrationWarning
-        className={`${geist.variable} ${geistMono.variable} ${inter.variable} bg-white text-slate-900 antialiased`}
+        className={`${geist.variable} ${inter.variable} bg-white text-slate-900 antialiased`}
       >
-        <ClarityProvider />
+        <LocalBusinessSchema />
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd),
-          }}
-        />
+        <ClarityProvider />
 
         {children}
 

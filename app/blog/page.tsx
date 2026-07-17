@@ -1,65 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import CTA from "@/components/sections/cta";
 
+import { blogs } from "@/lib/data/blogs";
+
 import {
-    Calendar,
-    ArrowRight,
+  Calendar,
+  ArrowRight,
+  FileText,
 } from "lucide-react";
 
-const posts = [
-    {
-        title: "5 Signs You Need Emergency Plumbing Service",
-        category: "Emergency Plumbing",
-        date: "Jan 15, 2026",
-        image: "/images/blog.png",
-        description:
-            "Learn the warning signs that indicate it's time to call a professional emergency plumber.",
-    },
-    {
-        title: "How To Prevent Drain Clogs At Home",
-        category: "Drain Cleaning",
-        date: "Jan 10, 2026",
-        image: "/images/service-2.png",
-        description:
-            "Simple maintenance tips to keep your kitchen and bathroom drains flowing smoothly.",
-    },
-    {
-        title: "Water Heater Repair vs Replacement",
-        category: "Water Heater",
-        date: "Jan 05, 2026",
-        image: "/images/service-3.png",
-        description:
-            "Discover when repairing your water heater is enough and when replacement is the better option.",
-    },
-    {
-        title: "Common Plumbing Problems Every Homeowner Faces",
-        category: "Residential Plumbing",
-        date: "Dec 28, 2025",
-        image: "/images/residential.png",
-        description:
-            "From leaking faucets to burst pipes, here are the most common plumbing issues homeowners face.",
-    },
-    {
-        title: "Why Regular Plumbing Maintenance Saves Money",
-        category: "Maintenance",
-        date: "Dec 20, 2025",
-        image: "/images/plumber-2.png",
-        description:
-            "Routine inspections help prevent expensive plumbing emergencies and extend system life.",
-    },
-    {
-        title: "Commercial Plumbing Tips For Businesses",
-        category: "Commercial",
-        date: "Dec 12, 2025",
-        image: "/images/commercial.png",
-        description:
-            "Best practices for maintaining commercial plumbing systems and avoiding costly downtime.",
-    },
-];
 
 export default function BlogPage() {
     return (
@@ -67,112 +22,155 @@ export default function BlogPage() {
 
             <Navbar />
 
+
             {/* Hero */}
 
-            <section className="relative overflow-hidden py-28">
+<section className="relative overflow-hidden py-28 lg:py-36">
 
-                <Image
-                    src="/images/blog.png"
-                    alt="Pipe Rescue Blog"
-                    fill
-                    priority
-                    className="object-cover"
-                />
+  <Image
+    src="/images/blog.png"
+    alt="Pipe Rescue Plumbing Blog"
+    fill
+    priority
+    className="object-cover"
+  />
 
-                <div className="absolute inset-0 bg-blue-900/75" />
+  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-blue-900/80 to-slate-900/80" />
 
-                <div className="container-custom relative z-10 text-center">
+  <div className="container-custom relative z-10">
 
-                    <span className="rounded-full bg-white/20 px-5 py-2 text-sm font-bold text-white">
-                        OUR BLOG
-                    </span>
+    <div className="mx-auto max-w-4xl text-center">
 
-                    <h1 className="mt-8 text-6xl font-black text-white">
-                        Plumbing Tips & Guides
-                    </h1>
+      <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-bold uppercase tracking-wider text-white backdrop-blur-md">
 
-                    <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-blue-100">
-                        Expert plumbing advice, maintenance tips and homeowner
-                        resources from the Pipe Rescue team.
-                    </p>
+        <FileText size={16} />
 
-                </div>
+        Pipe Rescue Blog
 
-            </section>
+      </div>
 
-            {/* Blog */}
+      <h1 className="mt-8 text-5xl font-black leading-tight text-white md:text-6xl lg:text-7xl">
 
-            <section className="py-24">
+        Houston Plumbing Tips,
+        <br />
+        Guides & Expert Advice
 
-                <div className="container-custom">
+      </h1>
 
-                    <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+      <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-blue-100">
 
-                        {posts.map((post) => (
+        Explore expert plumbing guides, emergency repair advice,
+        drain cleaning tips, leak detection insights, water heater
+        maintenance, and practical homeowner resources from the
+        Pipe Rescue editorial team.
 
-                            <article
-                                key={post.title}
-                                className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
-                            >
+      </p>
 
-                                <div className="relative h-64">
+      <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
 
-                                    <Image
-                                        src={post.image}
-                                        alt={post.title}
-                                        fill
-                                        className="object-cover transition duration-500 hover:scale-110"
-                                    />
+       <div className="rounded-full bg-white/10 px-5 py-3 text-white backdrop-blur">
+  {blogs.length} Expert Articles
+</div>
+        <div className="rounded-full bg-white/10 px-5 py-3 text-white backdrop-blur">
+          Houston Plumbing Guides
+        </div>
 
-                                </div>
+       <div className="rounded-full bg-white/10 px-5 py-3 text-white backdrop-blur">
+  Houston Plumbing Experts
+</div>
+      </div>
 
-                                <div className="p-8">
+    </div>
 
-                                    <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-bold text-blue-600">
-                                        {post.category}
-                                    </span>
+  </div>
 
-                                    <div className="mt-5 flex items-center gap-2 text-slate-500">
+</section>
 
-                                        <Calendar size={18} />
+           {/* Blog */}
 
-                                        {post.date}
+<section className="py-24">
+  <div className="container-custom">
 
-                                    </div>
+    <div className="mb-12 text-center">
+      <h2 className="text-4xl font-black text-slate-900">
+        Latest Plumbing Articles
+      </h2>
 
-                                    <h2 className="mt-5 text-3xl font-black leading-tight">
-                                        {post.title}
-                                    </h2>
+      <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-slate-600">
+        Browse our latest plumbing guides, maintenance tips, emergency repair
+        advice, and expert resources for homeowners and businesses in Houston.
+      </p>
+    </div>
 
-                                    <p className="mt-5 leading-8 text-slate-600">
-                                        {post.description}
-                                    </p>
+    <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
 
-                                    <button className="mt-8 inline-flex items-center gap-3 rounded-full bg-blue-600 px-7 py-4 font-bold text-white transition hover:bg-blue-700">
+      {blogs.map((post) => (
 
-                                        Read More
+        <article
+          key={post.slug}
+          className="group overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-blue-200 hover:shadow-2xl"
+        >
 
-                                        <ArrowRight size={18} />
+          <div className="relative h-64 overflow-hidden">
 
-                                    </button>
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover transition duration-500 group-hover:scale-110"
+            />
 
-                                </div>
+          </div>
 
-                            </article>
+          <div className="p-8">
 
-                        ))}
+            <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-bold text-blue-700">
+              {post.category}
+            </span>
 
-                    </div>
+            <div className="mt-5 flex items-center gap-2 text-sm text-slate-500">
 
-                </div>
+              <Calendar size={16} />
 
-            </section>
+              <span>{post.publishedAt}</span>
 
-            <CTA />
+              <span>•</span>
 
-            <Footer />
+              <span>{post.readingTime}</span>
 
-        </main>
-    );
+            </div>
+
+            <h2 className="mt-5 text-2xl font-black leading-tight text-slate-900 transition group-hover:text-blue-700">
+              {post.title}
+            </h2>
+
+            <p className="mt-5 leading-8 text-slate-600">
+              {post.description}
+            </p>
+
+            <Link
+              href={`/blog/${post.slug}`}
+              className="mt-8 inline-flex items-center gap-3 rounded-full bg-blue-600 px-7 py-4 font-bold text-white transition hover:bg-blue-700"
+            >
+              Read More
+              <ArrowRight size={18} />
+            </Link>
+
+          </div>
+
+        </article>
+
+      ))}
+
+    </div>
+
+  </div>
+</section>
+
+<CTA />
+
+<Footer />
+
+</main>
+);
 }
-

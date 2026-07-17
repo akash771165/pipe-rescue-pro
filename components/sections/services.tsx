@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
@@ -50,10 +48,9 @@ export default function Services() {
 
       <div className="container-custom">
 
-        {/* Heading */}
+                {/* Heading */}
 
         <div className="mx-auto max-w-3xl text-center">
-
           <span className="rounded-full bg-blue-100 px-5 py-2 text-sm font-bold text-blue-600">
             PLUMBING SERVICES
           </span>
@@ -68,35 +65,28 @@ export default function Services() {
             drain cleaning, leak detection, sewer line services, water heater
             repair and other plumbing solutions throughout the Houston area.
           </p>
-
         </div>
 
         {/* Service Cards */}
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
           {services.map((service) => (
-
             <article
               key={service.title}
               className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-lg transition duration-300 hover:-translate-y-2 hover:border-blue-600 hover:shadow-2xl"
             >
-
               <div className="relative h-64 overflow-hidden">
-
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  quality={90}
-                  sizes="(max-width:768px)100vw,(max-width:1200px)50vw,33vw"
+                  quality={75}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover transition duration-500 group-hover:scale-105"
                 />
-
               </div>
 
               <div className="p-8">
-
                 <h3 className="text-2xl font-bold text-slate-900">
                   {service.title}
                 </h3>
@@ -106,46 +96,35 @@ export default function Services() {
                 </p>
 
                 <div className="mt-6 space-y-3">
-
                   <div className="flex items-center gap-2">
-
                     <CheckCircle2
                       size={18}
                       className="text-green-600"
                     />
-
-                    <span>Residential & Commercial</span>
-
+                    <span>Residential &amp; Commercial</span>
                   </div>
 
                   <div className="flex items-center gap-2">
-
                     <CheckCircle2
                       size={18}
                       className="text-green-600"
                     />
-
                     <span>Service Requests Accepted 24/7</span>
-
                   </div>
 
                   <div className="flex items-center gap-2">
-
                     <CheckCircle2
                       size={18}
                       className="text-green-600"
                     />
-
-                    <span>Houston & Nearby Areas</span>
-
+                    <span>Houston &amp; Nearby Areas</span>
                   </div>
-
                 </div>
 
-                <div className="mt-8 flex gap-3">
-
+                <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     href={service.href}
+                    aria-label={`Learn more about ${service.title}`}
                     className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-700"
                   >
                     Learn More
@@ -154,26 +133,21 @@ export default function Services() {
 
                   <a
                     href={`tel:${siteConfig.phone}`}
+                    aria-label={`Call ${siteConfig.company}`}
                     className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-semibold transition hover:border-blue-600 hover:text-blue-600"
                   >
                     <Phone size={18} />
                     Call
                   </a>
-
                 </div>
-
               </div>
-
             </article>
-
           ))}
-
         </div>
 
         {/* Disclaimer */}
 
         <div className="mt-16 rounded-3xl border border-blue-100 bg-blue-50 p-8">
-
           <h3 className="text-2xl font-bold text-slate-900">
             Important Information
           </h3>
@@ -185,11 +159,9 @@ export default function Services() {
             the selected service provider and may vary depending on location and
             availability.
           </p>
-
         </div>
 
       </div>
-
     </section>
   );
 }
