@@ -231,4 +231,33 @@ export const blogs: BlogPost[] = [
     "Emergency Plumbing",
   ],
 },
+{
+  slug: "slab-leak-repair-houston",
+
+  title: "Slab Leak Repair Houston: Signs, Causes & What Homeowners Should Do",
+
+  description:
+    "Learn how to identify slab leaks, common causes, warning signs, repair options, and when to contact a plumbing professional in Houston.",
+
+  category: "Leak Detection",
+
+  image: "/images/service-3.png",
+
+  author: "Pipe Rescue Editorial Team",
+
+  publishedAt: "2026-07-27",
+
+  updatedAt: "2026-07-27",
+
+  readingTime: "11 min read",
+
+  keywords: [
+    "Slab Leak Repair Houston",
+    "Slab Leak Detection Houston",
+    "Water Leak Under Foundation",
+    "Foundation Leak",
+    "Leak Detection Houston",
+    "Plumbing Leak Repair Houston",
+  ],
+},
 ];

@@ -2,13 +2,14 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { blogContent } from "@/lib/data/blog-content";
 
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import CTA from "@/components/sections/cta";
 
 import { blogs } from "@/lib/data/blogs";
+import { blogContent } from "@/lib/data/blog-content";
+import type { BlogContent } from "@/lib/data/blog-content/types";
 
 type Props = {
   params: Promise<{
@@ -78,18 +79,20 @@ export default async function BlogArticle({
     notFound();
   }
 
+  const article: BlogContent | undefined =
+    blogContent[slug as keyof typeof blogContent];
+
   const related = blogs
     .filter((item) => item.slug !== blog.slug)
     .slice(0, 3);
-const article =
-  blogContent[slug as keyof typeof blogContent];
+
   return (
     <main className="overflow-x-hidden bg-white">
-
       <Navbar />
 
-      <section className="relative overflow-hidden py-24">
+      {/* Hero */}
 
+      <section className="relative overflow-hidden py-24">
         <Image
           src={blog.image}
           alt={blog.title}
@@ -101,9 +104,7 @@ const article =
         <div className="absolute inset-0 bg-slate-900/70" />
 
         <div className="container-custom relative z-10">
-
           <div className="max-w-4xl">
-
             <span className="rounded-full bg-blue-600 px-5 py-2 text-sm font-bold text-white">
               {blog.category}
             </span>
@@ -113,137 +114,110 @@ const article =
             </h1>
 
             <div className="mt-8 flex flex-wrap gap-6 text-white/90">
-
               <span>{blog.author}</span>
-
               <span>{blog.publishedAt}</span>
-
               <span>{blog.readingTime}</span>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
 
+      {/* Article */}
+
       <section className="py-20">
-
         <div className="container-custom">
-
           <div className="mx-auto max-w-4xl">
-
             <p className="text-xl leading-9 text-slate-700">
               {blog.description}
             </p>
-
-          <div className="mt-12">
-
+            
+<div className="mt-12">
   {article ? (
     <>
-
-      {article.introduction.map((paragraph, index) => (
-
-        <p
-          key={index}
-          className="mb-6 text-lg leading-8 text-slate-700"
-        >
-          {paragraph}
-        </p>
-
-      ))}
+      {article.introduction.map(
+        (paragraph: string, index: number) => (
+          <p
+            key={index}
+            className="mb-6 text-lg leading-8 text-slate-700"
+          >
+            {paragraph}
+          </p>
+        )
+      )}
 
       {article.sections.map((section) => (
-
         <section
           key={section.id}
           className="mt-14"
         >
-
-          <h2 className="mb-6 text-3xl font-black">
+          <h2 className="mb-6 text-3xl font-black text-slate-900">
             {section.title}
           </h2>
 
-          {section.content.map((paragraph, index) => (
-
-            <p
-              key={index}
-              className="mb-6 leading-8 text-slate-700"
-            >
-              {paragraph}
-            </p>
-
-          ))}
-
+          {section.content.map(
+            (paragraph: string, index: number) => (
+              <p
+                key={index}
+                className="mb-6 leading-8 text-slate-700"
+              >
+                {paragraph}
+              </p>
+            )
+          )}
         </section>
-
       ))}
 
       <section className="mt-16 rounded-3xl bg-blue-600 p-10 text-white">
-
         <h2 className="text-3xl font-black">
           {article.callToAction.title}
         </h2>
 
-        <p className="mt-4 text-lg">
+        <p className="mt-4 text-lg leading-8">
           {article.callToAction.description}
         </p>
 
         <a
           href="tel:+18773640861"
-          className="mt-8 inline-block rounded-full bg-white px-8 py-4 font-bold text-blue-700"
+          className="mt-8 inline-block rounded-full bg-white px-8 py-4 font-bold text-blue-700 transition hover:bg-slate-100"
         >
           📞 {article.callToAction.phone}
         </a>
-
       </section>
 
       <section className="mt-16">
-
         <h2 className="mb-8 text-3xl font-black">
           Frequently Asked Questions
         </h2>
 
-        {article.faqs.map((faq, index) => (
+        <div className="space-y-6">
+          {article.faqs.map((faq, index: number) => (
+            <div
+              key={index}
+              className="rounded-2xl border border-slate-200 p-6"
+            >
+              <h3 className="text-xl font-bold text-slate-900">
+                {faq.question}
+              </h3>
 
-          <div
-            key={index}
-            className="mb-6 rounded-2xl border p-6"
-          >
-
-            <h3 className="text-xl font-bold">
-              {faq.question}
-            </h3>
-
-            <p className="mt-3 leading-8 text-slate-600">
-              {faq.answer}
-            </p>
-
-          </div>
-
-        ))}
-
+              <p className="mt-3 leading-8 text-slate-600">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
+        </div>
       </section>
-
     </>
   ) : (
-
-    <p className="text-lg text-slate-700">
+    <p className="mt-8 text-lg text-slate-700">
       Full article coming soon.
     </p>
-
   )}
-
 </div>
 
           </div>
-
         </div>
-
       </section>
-
-      <section className="pb-24">
+            <section className="pb-24">
 
         <div className="container-custom">
 
