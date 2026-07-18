@@ -1,15 +1,26 @@
 import { siteConfig } from "@/lib/config/site";
+import type { City } from "@/lib/data/cities";
 
-export default function LocalBusinessSchema() {
+interface Props {
+  city?: City;
+}
+
+export default function LocalBusinessSchema({ city }: Props) {
+  const currentCity = city ?? {
+    name: siteConfig.city,
+    slug: "houston",
+    state: "Texas",
+  };
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "Plumber",
 
-    "@id": `${siteConfig.website}/#business`,
+    "@id": `${siteConfig.website}/service-areas/${currentCity.slug}#business`,
 
-    name: siteConfig.company,
+    name: `${siteConfig.company} - ${currentCity.name}`,
 
-    url: siteConfig.website,
+    url: `${siteConfig.website}/service-areas/${currentCity.slug}`,
 
     logo: `${siteConfig.website}${siteConfig.logo}`,
 
@@ -19,24 +30,21 @@ export default function LocalBusinessSchema() {
 
     email: siteConfig.email,
 
-    description:
-      "24/7 Emergency Plumbing, Drain Cleaning, Leak Detection, Sewer Repair and Water Heater Services in Houston, Texas.",
+    description: `24/7 emergency plumbing, drain cleaning, leak detection, sewer repair and water heater services in ${currentCity.name}, Texas.`,
 
     priceRange: "$$",
 
     address: {
       "@type": "PostalAddress",
-      addressLocality: siteConfig.city,
-      addressRegion: siteConfig.stateCode,
-      addressCountry: siteConfig.countryCode,
+      addressLocality: currentCity.name,
+      addressRegion: currentCity.state,
+      addressCountry: "US",
     },
 
-    areaServed: [
-      {
-        "@type": "City",
-        name: siteConfig.city,
-      },
-    ],
+    areaServed: {
+      "@type": "City",
+      name: currentCity.name,
+    },
 
     openingHours: siteConfig.openingHours,
 

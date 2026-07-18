@@ -1,11 +1,11 @@
-type Item = {
+type BreadcrumbItem = {
   name: string;
   url: string;
 };
 
-type Props = {
-  items: Item[];
-};
+interface Props {
+  items: BreadcrumbItem[];
+}
 
 export default function BreadcrumbSchema({ items }: Props) {
   const schema = {

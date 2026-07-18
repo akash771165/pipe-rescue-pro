@@ -40,7 +40,12 @@ export async function generateMetadata({
     title: service.seoTitle,
     description: service.metaDescription,
     keywords: service.keywords,
+robots: {
+  index: true,
+  follow: true,
+},
 
+category: "Plumbing Services",
     alternates: {
       canonical: `https://www.piperesque.com/services/${service.slug}`,
     },
@@ -84,9 +89,10 @@ export default async function ServicePage({
 
   const Icon = service.icon;
 
-  const related = services
-    .filter((item) => item.slug !== service.slug)
-    .slice(0, 3);
+  const related = [...services]
+  .filter((item) => item.slug !== service.slug)
+  .sort(() => Math.random() - 0.5)
+  .slice(0, 3);
 
   return (
     <main className="overflow-x-hidden bg-white">

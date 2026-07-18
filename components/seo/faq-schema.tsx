@@ -1,13 +1,13 @@
-type FAQ = {
+export interface FAQItem {
   question: string;
   answer: string;
-};
+}
 
-type Props = {
-  faqs: FAQ[];
-};
+interface FAQSchemaProps {
+  faqs: FAQItem[];
+}
 
-export default function FAQSchema({ faqs }: Props) {
+export default function FAQSchema({ faqs }: FAQSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
