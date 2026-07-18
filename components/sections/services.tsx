@@ -44,18 +44,22 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="bg-slate-50 py-20 lg:py-24">
-
+    <section
+      className="bg-slate-50 py-20 lg:py-24"
+      aria-labelledby="services-heading"
+    >
       <div className="container-custom">
-
-                {/* Heading */}
+        {/* Heading */}
 
         <div className="mx-auto max-w-3xl text-center">
           <span className="rounded-full bg-blue-100 px-5 py-2 text-sm font-bold text-blue-600">
             PLUMBING SERVICES
           </span>
 
-          <h2 className="mt-6 text-4xl font-black text-slate-900 lg:text-5xl">
+          <h2
+            id="services-heading"
+            className="mt-6 text-4xl font-black text-slate-900 lg:text-5xl"
+          >
             Plumbing Services Available in Houston
           </h2>
 
@@ -80,7 +84,7 @@ export default function Services() {
                   src={service.image}
                   alt={service.title}
                   fill
-                  quality={75}
+                  quality={65}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover transition duration-500 group-hover:scale-105"
                 />
@@ -99,6 +103,7 @@ export default function Services() {
                   <div className="flex items-center gap-2">
                     <CheckCircle2
                       size={18}
+                      aria-hidden="true"
                       className="text-green-600"
                     />
                     <span>Residential &amp; Commercial</span>
@@ -107,6 +112,7 @@ export default function Services() {
                   <div className="flex items-center gap-2">
                     <CheckCircle2
                       size={18}
+                      aria-hidden="true"
                       className="text-green-600"
                     />
                     <span>Service Requests Accepted 24/7</span>
@@ -115,6 +121,7 @@ export default function Services() {
                   <div className="flex items-center gap-2">
                     <CheckCircle2
                       size={18}
+                      aria-hidden="true"
                       className="text-green-600"
                     />
                     <span>Houston &amp; Nearby Areas</span>
@@ -124,11 +131,10 @@ export default function Services() {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Link
                     href={service.href}
-                    aria-label={`Learn more about ${service.title}`}
                     className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-blue-700"
                   >
-                    Learn More
-                    <ArrowRight size={18} />
+                    Learn More About {service.title}
+                    <ArrowRight size={18} aria-hidden="true" />
                   </Link>
 
                   <a
@@ -136,8 +142,8 @@ export default function Services() {
                     aria-label={`Call ${siteConfig.company}`}
                     className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-semibold transition hover:border-blue-600 hover:text-blue-600"
                   >
-                    <Phone size={18} />
-                    Call
+                    <Phone size={18} aria-hidden="true" />
+                    Call Now
                   </a>
                 </div>
               </div>
@@ -160,7 +166,6 @@ export default function Services() {
             availability.
           </p>
         </div>
-
       </div>
     </section>
   );
