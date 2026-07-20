@@ -14,6 +14,30 @@ import { drainCleaningHouston } from "./drain-cleaning-houston";
 import { sewerLineRepairHouston } from "./sewer-line-repair-houston";
 import { toiletRepairHouston } from "./toilet-repair-houston";
 import { trenchlessSewerRepairHouston } from "./trenchless-sewer-repair-houston";
+import { waterSoftenerInstallationHouston } from "./water-softener-installation-houston";
+import { sewerCameraInspectionHouston } from "./sewer-camera-inspection-houston";
+import { sewerLineReplacementHouston } from "./sewer-line-replacement-houston";
+import { sewerLineReplacementCostHouston } from "./sewer-line-replacement-cost-houston";
+import { sewerBackupHouston } from "./sewer-backup-houston";
+import { emergencyPlumbingCostHouston } from "./emergency-plumbing-cost-houston";
+import { cloggedSewerLineHouston } from "./clogged-sewer-line-houston";
+import { sewerSmellHouseHouston } from "./sewer-smell-house-houston";
+import { mainWaterLineReplacementCostHouston } from "./main-water-line-replacement-cost-houston";
+import { waterPressureLowHouseHouston } from "./water-pressure-low-house-houston";
+import { tanklessWaterHeaterInstallationHouston } from "./tankless-water-heater-installation-houston";
+import { waterHeaterInstallationCostHouston } from "./water-heater-installation-cost-houston";
+import { garbageDisposalRepairHouston } from "./garbage-disposal-repair-houston";
+import { kitchenDrainClogHouston } from "./kitchen-drain-clog-houston";
+import { bathroomDrainRepairHouston } from "./bathroom-drain-repair-houston";
+import { sewerCleanoutInstallationHouston } from "./sewer-cleanout-installation-houston";
+import { pipeLeakCeilingHouston } from "./pipe-leak-ceiling-houston";
+import { slabLeakInsuranceHouston } from "./slab-leak-insurance-houston";
+import { waterMeterLeakHouston } from "./water-meter-leak-houston";
+import { wholeHouseWaterFiltrationHouston } from "./whole-house-water-filtration-houston";
+import { waterSoftenerRepairHouston } from "./water-softener-repair-houston";
+import { waterSoftenerInstallationCostHouston } from "./water-softener-installation-cost-houston";
+import { reverseOsmosisInstallationHouston } from "./reverse-osmosis-installation-houston";
+import { reverseOsmosisRepairHouston } from "./reverse-osmosis-repair-houston";
 
 export const blogContent = {
   "emergency-plumber-near-me-houston": emergencyPlumberNearMeHouston,
@@ -32,4 +56,28 @@ export const blogContent = {
   "sewer-line-repair-houston": sewerLineRepairHouston,
   "toilet-repair-houston": toiletRepairHouston,
   "trenchless-sewer-repair-houston": trenchlessSewerRepairHouston,
+  "water-softener-installation-houston": waterSoftenerInstallationHouston,
+  "sewer-camera-inspection-houston": sewerCameraInspectionHouston,
+  "sewer-line-replacement-houston": sewerLineReplacementHouston,
+  "sewer-line-replacement-cost-houston": sewerLineReplacementCostHouston,
+  "sewer-backup-houston": sewerBackupHouston,
+  "emergency-plumbing-cost-houston": emergencyPlumbingCostHouston,
+  "clogged-sewer-line-houston": cloggedSewerLineHouston,
+  "sewer-smell-house-houston": sewerSmellHouseHouston,
+  "main-water-line-replacement-cost-houston": mainWaterLineReplacementCostHouston,
+  "water-pressure-low-house-houston": waterPressureLowHouseHouston,
+  "tankless-water-heater-installation-houston": tanklessWaterHeaterInstallationHouston,
+  "water-heater-installation-cost-houston": waterHeaterInstallationCostHouston,
+  "garbage-disposal-repair-houston": garbageDisposalRepairHouston,
+  "kitchen-drain-clog-houston": kitchenDrainClogHouston,
+  "bathroom-drain-repair-houston": bathroomDrainRepairHouston,
+  "sewer-cleanout-installation-houston": sewerCleanoutInstallationHouston,
+  "pipe-leak-ceiling-houston": pipeLeakCeilingHouston,
+  "slab-leak-insurance-houston": slabLeakInsuranceHouston,
+  "water-meter-leak-houston": waterMeterLeakHouston,
+  "whole-house-water-filtration-houston": wholeHouseWaterFiltrationHouston,
+  "water-softener-repair-houston": waterSoftenerRepairHouston,
+  "water-softener-installation-cost-houston": waterSoftenerInstallationCostHouston,
+  "reverse-osmosis-installation-houston": reverseOsmosisInstallationHouston,
+  "reverse-osmosis-repair-houston": reverseOsmosisRepairHouston,
 };
