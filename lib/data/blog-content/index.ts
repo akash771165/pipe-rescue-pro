@@ -38,6 +38,15 @@ import { waterSoftenerRepairHouston } from "./water-softener-repair-houston";
 import { waterSoftenerInstallationCostHouston } from "./water-softener-installation-cost-houston";
 import { reverseOsmosisInstallationHouston } from "./reverse-osmosis-installation-houston";
 import { reverseOsmosisRepairHouston } from "./reverse-osmosis-repair-houston";
+import { waterFiltrationSystemRepairHouston } from "./water-filtration-system-repair-houston";
+import { hardWaterProblemsHouston } from "./hard-water-problems-houston";
+import { garbageDisposalInstallationHouston } from "./garbage-disposal-installation-houston";
+import { drainSnakingVsHydroJetting } from "./drain-snaking-vs-hydro-jetting";
+import { emergencyPlumbingRepairHoustonTx } from "./emergency-plumbing-repair-houston-tx";
+import { waterLeakDetectionVsRepairHouston } from "./water-leak-detection-vs-repair-houston";
+import { slabLeakRepairCostHoustonGuide } from "./slab-leak-repair-cost-houston-guide";
+import { waterPressureProblemsHouston } from "./water-pressure-problems-houston";
+import { mainWaterLineRepairHouston } from "./main-water-line-repair-houston";
 
 export const blogContent = {
   "emergency-plumber-near-me-houston": emergencyPlumberNearMeHouston,
@@ -80,4 +89,13 @@ export const blogContent = {
   "water-softener-installation-cost-houston": waterSoftenerInstallationCostHouston,
   "reverse-osmosis-installation-houston": reverseOsmosisInstallationHouston,
   "reverse-osmosis-repair-houston": reverseOsmosisRepairHouston,
+  "water-filtration-system-repair-houston": waterFiltrationSystemRepairHouston,
+  "hard-water-problems-houston": hardWaterProblemsHouston,
+  "garbage-disposal-installation-houston": garbageDisposalInstallationHouston,
+  "drain-snaking-vs-hydro-jetting": drainSnakingVsHydroJetting,
+  "emergency-plumbing-repair-houston-tx": emergencyPlumbingRepairHoustonTx,
+  "water-leak-detection-vs-repair-houston": waterLeakDetectionVsRepairHouston,
+  "slab-leak-repair-cost-houston-guide": slabLeakRepairCostHoustonGuide,
+  "water-pressure-problems-houston": waterPressureProblemsHouston,
+  "main-water-line-repair-houston": mainWaterLineRepairHouston,
 };
