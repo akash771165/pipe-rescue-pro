@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
 
   poweredByHeader: false,
 
+  trailingSlash: false,
+
+  generateEtags: true,
+
   images: {
     formats: ["image/avif", "image/webp"],
 
@@ -18,9 +22,7 @@ const nextConfig: NextConfig = {
   },
 
   experimental: {
-    optimizePackageImports: [
-      "lucide-react",
-    ],
+    optimizePackageImports: ["lucide-react"],
   },
 
   async headers() {
