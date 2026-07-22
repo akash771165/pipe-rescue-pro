@@ -16,31 +16,40 @@ const CTA = dynamic(() => import("@/components/sections/cta"));
 
 export const metadata: Metadata = {
   title: "24/7 Emergency Plumbing Services in Houston, TX",
+
   description:
-    "Pipe Rescue helps homeowners connect with licensed plumbing professionals for 24/7 emergency plumbing, drain cleaning, leak detection, sewer line repair, water heater repair and residential plumbing services throughout Houston, Texas.",
+    "24/7 emergency plumber in Houston, TX. Fast drain cleaning, leak detection, water heater repair, sewer line repair, and residential plumbing services.",
 
   keywords: [
     "Emergency Plumber Houston",
+    "Houston Plumber",
     "24/7 Emergency Plumbing",
+    "Emergency Plumbing Houston TX",
     "Drain Cleaning Houston",
-    "Leak Detection",
-    "Water Heater Repair",
-    "Pipe Repair",
-    "Sewer Line Repair",
+    "Leak Detection Houston",
+    "Water Heater Repair Houston",
+    "Water Heater Installation",
+    "Pipe Repair Houston",
+    "Sewer Line Repair Houston",
     "Residential Plumbing",
+    "Commercial Plumbing",
     "Licensed Plumber Houston",
+    "Houston Plumbing Company",
   ],
 
   alternates: {
-    canonical: "https://www.piperesque.com",
+    canonical: "https://www.piperesque.com/",
   },
 
   openGraph: {
     title: "24/7 Emergency Plumbing Services in Houston | Pipe Rescue",
+
     description:
-      "Emergency plumbing, drain cleaning, sewer repair, leak detection and water heater services available across Houston, Texas.",
-    url: "https://www.piperesque.com",
+      "24/7 emergency plumber in Houston, TX. Fast drain cleaning, leak detection, sewer repair and water heater services.",
+
+    url: "https://www.piperesque.com/",
     type: "website",
+
     images: [
       {
         url: "/og-image.png",
@@ -53,9 +62,12 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
+
     title: "Pipe Rescue | Emergency Plumbing Houston",
+
     description:
-      "24/7 emergency plumbing, drain cleaning, sewer repair and water heater services in Houston.",
+      "24/7 emergency plumber in Houston, TX. Drain cleaning, leak detection, sewer repair and water heater services.",
+
     images: ["/og-image.png"],
   },
 };
