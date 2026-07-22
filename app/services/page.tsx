@@ -1,5 +1,4 @@
-"use client";
-
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,136 +9,132 @@ import CTA from "@/components/sections/cta";
 import { CheckCircle2 } from "lucide-react";
 import { services } from "@/lib/data/services";
 
+export const metadata: Metadata = {
+  title: "Professional Plumbing Services in Houston, TX | Pipe Rescue",
+
+  description:
+    "Explore Pipe Rescue's professional plumbing services in Houston, including emergency plumbing, drain cleaning, leak detection, water heater repair, sewer line repair, and residential & commercial plumbing.",
+
+  alternates: {
+    canonical: "https://www.piperesque.com/services",
+  },
+
+  openGraph: {
+    title: "Professional Plumbing Services in Houston | Pipe Rescue",
+    description:
+      "Emergency plumbing, drain cleaning, leak detection, water heater repair and sewer line repair in Houston, Texas.",
+    url: "https://www.piperesque.com/services",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Pipe Rescue Plumbing Services",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Pipe Rescue Plumbing Services",
+    description:
+      "Professional plumbing services including emergency plumbing, drain cleaning and water heater repair.",
+    images: ["/og-image.png"],
+  },
+};
+
 export default function ServicesPage() {
-    return (
-        <main className="overflow-x-hidden bg-white">
+  return (
+    <main className="overflow-x-hidden bg-white">
+      <Navbar />
 
-            <Navbar />
+      <section className="relative overflow-hidden py-28">
+        <Image
+          src="/images/service-1.png"
+          alt="Professional Plumbing Services in Houston"
+          fill
+          priority
+          className="object-cover"
+        />
 
-            {/* Hero */}
+        <div className="absolute inset-0 bg-blue-900/75" />
 
-            <section className="relative overflow-hidden py-28">
+        <div className="container-custom relative z-10 text-center">
+          <span className="rounded-full bg-white/20 px-5 py-2 text-sm font-bold text-white">
+            OUR SERVICES
+          </span>
 
-                <Image
-                    src="/images/service-1.png"
-                    alt="Professional Plumbing Services in Houston"
+          <h1 className="mt-8 text-6xl font-black text-white">
+            Complete Plumbing Solutions
+          </h1>
+
+          <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-blue-100">
+            Residential and commercial plumbing services delivered by licensed
+            professionals across Houston.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="container-custom grid gap-10 lg:grid-cols-2">
+          {services.map((service) => {
+            const Icon = service.icon;
+
+            return (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="block overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+              >
+                <div className="relative h-72">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
                     fill
-                    priority
                     className="object-cover"
-                />
-
-                <div className="absolute inset-0 bg-blue-900/75" />
-
-                <div className="container-custom relative z-10 text-center">
-
-                    <span className="rounded-full bg-white/20 px-5 py-2 text-sm font-bold text-white">
-                        OUR SERVICES
-                    </span>
-
-                    <h1 className="mt-8 text-6xl font-black text-white">
-                        Complete Plumbing Solutions
-                    </h1>
-
-                    <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-blue-100">
-                        Residential and commercial plumbing services delivered by
-                        licensed professionals across Houston.
-                    </p>
-
+                  />
                 </div>
 
-            </section>
+                <div className="p-8">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100">
+                    <Icon size={34} className="text-blue-600" />
+                  </div>
 
-            {/* Services */}
+                  <h2 className="mt-6 text-3xl font-black">
+                    {service.shortTitle}
+                  </h2>
 
-            <section className="py-24">
+                  <p className="mt-5 leading-8 text-slate-600">
+                    {service.description}
+                  </p>
 
-                <div className="container-custom grid gap-10 lg:grid-cols-2">
+                  <div className="mt-8 space-y-4">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="text-green-600" />
+                      <span>Licensed Professionals</span>
+                    </div>
 
-                    {services.map((service) => {
-                        const Icon = service.icon;
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="text-green-600" />
+                      <span>Upfront Pricing</span>
+                    </div>
 
-                        return (
-
-                            <Link
-                                key={service.slug}
-                                href={`/services/${service.slug}`}
-                                className="block overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
-                            >
-
-                                <div className="relative h-72">
-
-                                    <Image
-                                        src={service.image}
-                                        alt={service.title}
-                                        fill
-                                        className="object-cover"
-                                    />
-
-                                </div>
-
-                                <div className="p-8">
-
-                                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100">
-
-                                        <Icon
-                                            size={34}
-                                            className="text-blue-600"
-                                        />
-
-                                    </div>
-
-                                    <h2 className="mt-6 text-3xl font-black">
-                                        {service.shortTitle}
-                                    </h2>
-
-                                    <p className="mt-5 leading-8 text-slate-600">
-                                        {service.description}
-                                    </p>
-
-                                    <div className="mt-8 space-y-4">
-
-                                        <div className="flex items-center gap-3">
-
-                                            <CheckCircle2 className="text-green-600" />
-
-                                            <span>Licensed Professionals</span>
-
-                                        </div>
-
-                                        <div className="flex items-center gap-3">
-
-                                            <CheckCircle2 className="text-green-600" />
-
-                                            <span>Upfront Pricing</span>
-
-                                        </div>
-
-                                        <div className="flex items-center gap-3">
-
-                                            <CheckCircle2 className="text-green-600" />
-
-                                            <span>24/7 Emergency Support</span>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </Link>
-
-                        );
-                    })}
-
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="text-green-600" />
+                      <span>24/7 Emergency Support</span>
+                    </div>
+                  </div>
                 </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
 
-            </section>
+      <CTA />
 
-         
-<CTA />
-
-<Footer />
-
-</main>
-);
+      <Footer />
+    </main>
+  );
 }
