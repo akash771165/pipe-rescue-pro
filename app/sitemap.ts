@@ -7,54 +7,54 @@ import { locations } from "@/lib/data/locations";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.website;
-  const lastModified = new Date();
+  const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified,
+      lastModified: now,
       changeFrequency: "daily",
       priority: 1,
     },
     {
       url: `${baseUrl}/services`,
-      lastModified,
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.95,
     },
     {
       url: `${baseUrl}/service-areas`,
-      lastModified,
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified,
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified,
+      lastModified: now,
       changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified,
+      lastModified: now,
       changeFrequency: "weekly",
       priority: 0.85,
     },
     {
       url: `${baseUrl}/privacy-policy`,
-      lastModified,
+      lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified,
+      lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,
     },
@@ -62,21 +62,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const servicePages: MetadataRoute.Sitemap = services.map((service) => ({
     url: `${baseUrl}/services/${service.slug}`,
-    lastModified,
+    lastModified: now,
     changeFrequency: "weekly",
     priority: 0.9,
   }));
 
-  const blogPages: MetadataRoute.Sitemap = blogs.map((blog) => ({
-    url: `${baseUrl}/blog/${blog.slug}`,
-    lastModified: new Date(blog.updatedAt),
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
+  const blogPages: MetadataRoute.Sitemap = blogs.map((blog) => {
+    let blogDate = new Date(blog.updatedAt);
+
+    // Invalid date ya future date ho to current date use karo
+    if (isNaN(blogDate.getTime()) || blogDate > now) {
+      blogDate = now;
+    }
+
+    return {
+      url: `${baseUrl}/blog/${blog.slug}`,
+      lastModified: blogDate,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    };
+  });
 
   const locationPages: MetadataRoute.Sitemap = locations.map((location) => ({
     url: `${baseUrl}/location/${location.slug}`,
-    lastModified,
+    lastModified: now,
     changeFrequency: "weekly",
     priority: 0.9,
   }));
@@ -85,17 +94,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (location) =>
       services.map((service) => ({
         url: `${baseUrl}/location/${location.slug}/${service.slug}`,
-        lastModified,
+        lastModified: now,
         changeFrequency: "weekly",
         priority: 0.85,
       }))
   );
 
-  return [
+  const sitemap = [
     ...staticPages,
     ...servicePages,
     ...blogPages,
     ...locationPages,
     ...locationServicePages,
   ];
+
+  // Duplicate URLs remove karo
+  return sitemap.filter(
+    (item, index, self) =>
+      index === self.findIndex((entry) => entry.url === item.url)
+  );
 }
