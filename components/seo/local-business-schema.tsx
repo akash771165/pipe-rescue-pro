@@ -9,28 +9,30 @@ export default function LocalBusinessSchema({ city }: Props) {
   const currentCity = city ?? {
     name: siteConfig.city,
     slug: "houston",
-    state: "Texas",
+    state: siteConfig.state,
   };
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "Plumber",
 
-    "@id": `${siteConfig.website}/service-areas/${currentCity.slug}#business`,
+    "@id": `${siteConfig.website}/service-areas/${currentCity.slug}#localbusiness`,
 
-    name: `${siteConfig.company} - ${currentCity.name}`,
+    name: `${siteConfig.company}`,
+
+    alternateName: `${siteConfig.company} Plumbing Services`,
 
     url: `${siteConfig.website}/service-areas/${currentCity.slug}`,
 
-    logo: `${siteConfig.website}${siteConfig.logo}`,
-
     image: `${siteConfig.website}${siteConfig.ogImage}`,
+
+    logo: `${siteConfig.website}${siteConfig.logo}`,
 
     telephone: siteConfig.phone,
 
     email: siteConfig.email,
 
-    description: `24/7 emergency plumbing, drain cleaning, leak detection, sewer repair and water heater services in ${currentCity.name}, Texas.`,
+    description: `24/7 emergency plumbing, drain cleaning, leak detection, sewer line repair, water heater repair, and residential & commercial plumbing services in ${currentCity.name}, Texas.`,
 
     priceRange: "$$",
 
@@ -50,10 +52,52 @@ export default function LocalBusinessSchema({ city }: Props) {
 
     contactPoint: {
       "@type": "ContactPoint",
+      contactType: "customer support",
       telephone: siteConfig.phone,
-      contactType: "customer service",
+      availableLanguage: ["English"],
       areaServed: "US",
-      availableLanguage: "English",
+    },
+
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Plumbing Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Emergency Plumbing",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Drain Cleaning",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Leak Detection",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Water Heater Repair",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Sewer Line Repair",
+          },
+        },
+      ],
     },
 
     sameAs: [

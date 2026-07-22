@@ -1268,4 +1268,48 @@ export const blogs: BlogPost[] = [
     "Professional Plumber Houston"
   ],
 },
+{
+  slug: "emergency-plumber-houston-cost-guide",
+  title: "Emergency Plumber Houston Cost Guide | 24 Hour Plumbing Repair Pricing",
+  description:
+    "Learn emergency plumber costs in Houston, factors affecting pricing, common emergency repairs, and how to choose the right 24 hour plumbing service.",
+  category: "Emergency Plumbing",
+  image: "/images/service-1.png",
+  author: "Pipe Rescue Editorial Team",
+  publishedAt: "2026-09-12",
+  updatedAt: "2026-09-12",
+  readingTime: "12 min read",
+  keywords: [
+    "Emergency Plumber Houston Cost",
+    "Emergency Plumbing Cost Houston",
+    "24 Hour Plumber Houston",
+    "Emergency Plumber Houston",
+    "Houston Emergency Plumbing",
+    "Emergency Plumbing Repair Houston",
+    "Burst Pipe Repair Cost Houston",
+    "Licensed Emergency Plumber Houston"
+  ],
+},
+{
+  slug: "24-hour-plumber-houston-tx",
+  title: "24 Hour Plumber Houston TX | Emergency Plumbing Services Available Anytime",
+  description:
+    "Need a 24 hour plumber in Houston TX? Learn when to call an emergency plumber, common urgent plumbing issues, costs, and how professional plumbers handle emergency repairs.",
+  category: "Emergency Plumbing",
+  image: "/images/service-1.png",
+  author: "Pipe Rescue Editorial Team",
+  publishedAt: "2026-09-13",
+  updatedAt: "2026-09-13",
+  readingTime: "12 min read",
+  keywords: [
+    "24 Hour Plumber Houston TX",
+    "Emergency Plumber Houston TX",
+    "24 Hour Plumbing Service Houston",
+    "Emergency Plumbing Houston",
+    "24/7 Plumber Houston",
+    "Urgent Plumbing Repair Houston",
+    "After Hours Plumber Houston",
+    "Licensed Plumber Houston"
+  ],
+},
 ];

@@ -1,28 +1,22 @@
 export const siteConfig = {
   // Business
-
   company: "Pipe Rescue",
   tagline: "24/7 Emergency Plumbing Services",
 
   // Website
-
   website: "https://www.piperesque.com",
   domain: "piperesque.com",
 
   // Contact
-
   phone: "+18773640861",
   phoneDisplay: "(877) 364-0861",
+  email: "support@piperesque.com",
 
-  // Leave blank to disable WhatsApp
-
+  // Leave blank if not using WhatsApp
   whatsapp: "",
 
-  email: "resquepipe@gmail.com",
-
   // Location
-
-  address: "Houston, Texas",
+  address: "Houston, TX",
   city: "Houston",
   state: "Texas",
   stateCode: "TX",
@@ -31,13 +25,11 @@ export const siteConfig = {
   zip: "",
 
   // SEO
-
   businessType: "Plumber",
-  primaryKeyword: "Emergency Plumber Houston",
+  primaryKeyword: "Emergency Plumber Houston TX",
   serviceArea: "Houston, Texas",
 
-  // Social
-
+  // Social (Fill only when real accounts are created)
   facebook: "",
   instagram: "",
   x: "",
@@ -45,18 +37,32 @@ export const siteConfig = {
   youtube: "",
 
   // Images
-
   logo: "/logo.png",
   favicon: "/favicon.ico",
   ogImage: "/og-image.png",
 
   // Business Hours
-
   openingHours: "Mo-Su 00:00-23:59",
   emergencyService: true,
 
   // Google
-
   googleMaps: "",
   googleBusinessProfile: "",
-};
+
+  // Contact Page
+  contactPage: "/contact",
+
+  // Service Areas
+  serviceAreas: [
+    "Houston",
+    "Pasadena",
+    "Sugar Land",
+    "Pearland",
+    "Missouri City",
+    "Katy",
+    "Cypress",
+    "Spring",
+    "The Woodlands",
+    "Tomball"
+  ]
+} as const;
