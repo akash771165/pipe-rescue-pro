@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Need a licensed emergency plumber in Houston? Pipe Rescue provides 24/7 emergency plumbing, drain cleaning, leak detection, sewer line repair, pipe repair, water heater repair, water heater installation and residential plumbing services.",
+    "24/7 emergency plumber in Houston, TX. Fast drain cleaning, leak detection, water heater repair, sewer line repair, and residential plumbing services.",
 
   applicationName: siteConfig.company,
 
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   category: "Business",
 
   alternates: {
-    canonical: siteConfig.website,
+    canonical: `${siteConfig.website}/`,
   },
 
   robots: {
@@ -82,29 +82,29 @@ export const metadata: Metadata = {
     },
   },
 
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.website,
-    siteName: siteConfig.company,
-    title: `${siteConfig.company} | 24/7 Emergency Plumbing Services Houston`,
-    description:
-      "Licensed plumbing professionals providing emergency plumbing, drain cleaning, leak detection, sewer repair and water heater services throughout Houston, Texas.",
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: `${siteConfig.company} Emergency Plumbing`,
-      },
-    ],
-  },
+ openGraph: {
+  type: "website",
+  locale: "en_US",
+  url: siteConfig.website,
+  siteName: siteConfig.company,
+  title: `${siteConfig.company} | 24/7 Emergency Plumbing Services Houston`,
+  description:
+    "24/7 emergency plumber in Houston, TX. Fast drain cleaning, leak detection, water heater repair, sewer line repair, and residential plumbing services.",
+  images: [
+    {
+      url: siteConfig.ogImage,
+      width: 1200,
+      height: 630,
+      alt: `${siteConfig.company} Emergency Plumbing`,
+    },
+  ],
+},
 
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.company} | Emergency Plumbing Houston`,
     description:
-      "24/7 Emergency Plumbing, Drain Cleaning & Water Heater Repair in Houston.",
+      "24/7 emergency plumber in Houston, TX. Drain cleaning, leak detection, sewer repair and water heater services.",
     images: [siteConfig.ogImage],
   },
 
