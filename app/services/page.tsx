@@ -10,10 +10,25 @@ import { CheckCircle2 } from "lucide-react";
 import { services } from "@/lib/data/services";
 
 export const metadata: Metadata = {
-  title: "Professional Plumbing Services in Houston, TX | Pipe Rescue",
+  title: "Professional Plumbing Services in Houston, TX",
 
   description:
     "Explore Pipe Rescue's professional plumbing services in Houston, including emergency plumbing, drain cleaning, leak detection, water heater repair, sewer line repair, and residential & commercial plumbing.",
+
+  keywords: [
+    "Houston Plumber",
+    "Emergency Plumber Houston",
+    "Emergency Plumbing Houston",
+    "Drain Cleaning Houston",
+    "Leak Detection Houston",
+    "Water Heater Repair Houston",
+    "Pipe Repair Houston",
+    "Sewer Line Repair Houston",
+    "Residential Plumbing Houston",
+    "Commercial Plumbing Houston",
+    "Licensed Plumber Houston",
+    "24/7 Plumber Houston",
+  ],
 
   alternates: {
     canonical: "https://www.piperesque.com/services",
@@ -24,7 +39,9 @@ export const metadata: Metadata = {
     description:
       "Emergency plumbing, drain cleaning, leak detection, water heater repair and sewer line repair in Houston, Texas.",
     url: "https://www.piperesque.com/services",
+    siteName: "Pipe Rescue",
     type: "website",
+    locale: "en_US",
     images: [
       {
         url: "/og-image.png",
@@ -37,9 +54,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Pipe Rescue Plumbing Services",
+    title: "Professional Plumbing Services in Houston | Pipe Rescue",
     description:
-      "Professional plumbing services including emergency plumbing, drain cleaning and water heater repair.",
+      "Professional plumbing services including emergency plumbing, drain cleaning, leak detection and water heater repair in Houston.",
     images: ["/og-image.png"],
   },
 };
