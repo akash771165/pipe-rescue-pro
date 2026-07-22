@@ -5,7 +5,6 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
 import ClarityProvider from "@/components/providers/clarity";
-import LocalBusinessSchema from "@/components/seo/local-business-schema";
 import { siteConfig } from "@/lib/config/site";
 
 const geist = Geist({
@@ -82,23 +81,23 @@ export const metadata: Metadata = {
     },
   },
 
- openGraph: {
-  type: "website",
-  locale: "en_US",
-  url: siteConfig.website,
-  siteName: siteConfig.company,
-  title: `${siteConfig.company} | 24/7 Emergency Plumbing Services Houston`,
-  description:
-    "24/7 emergency plumber in Houston, TX. Fast drain cleaning, leak detection, water heater repair, sewer line repair, and residential plumbing services.",
-  images: [
-    {
-      url: siteConfig.ogImage,
-      width: 1200,
-      height: 630,
-      alt: `${siteConfig.company} Emergency Plumbing`,
-    },
-  ],
-},
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.website,
+    siteName: siteConfig.company,
+    title: `${siteConfig.company} | 24/7 Emergency Plumbing Services Houston`,
+    description:
+      "24/7 emergency plumber in Houston, TX. Fast drain cleaning, leak detection, water heater repair, sewer line repair, and residential plumbing services.",
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.company} Emergency Plumbing`,
+      },
+    ],
+  },
 
   twitter: {
     card: "summary_large_image",
@@ -140,8 +139,6 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${geist.variable} ${inter.variable} bg-white text-slate-900 antialiased`}
       >
-        <LocalBusinessSchema />
-
         <ClarityProvider />
 
         {children}
