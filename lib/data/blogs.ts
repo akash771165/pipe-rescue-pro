@@ -1312,4 +1312,100 @@ export const blogs: BlogPost[] = [
     "Licensed Plumber Houston"
   ],
 },
+{
+  slug: "plumber-houston-tx",
+
+  title:
+    "Plumber Houston TX | Professional Residential & Emergency Plumbing Services",
+
+  description:
+    "Looking for a professional plumber in Houston TX? Learn about plumbing services, common plumbing problems, repair solutions, maintenance tips, and when to hire a licensed plumber.",
+
+  category: "General Plumbing",
+
+  image: "/images/service-1.png",
+
+  author: "Pipe Rescue Editorial Team",
+
+  publishedAt: "2026-09-14",
+
+  updatedAt: "2026-09-14",
+
+  readingTime: "12 min read",
+
+  keywords: [
+    "Plumber Houston TX",
+    "Plumber Houston",
+    "Licensed Plumber Houston",
+    "Residential Plumber Houston",
+    "Emergency Plumber Houston",
+    "Local Plumber Houston",
+    "Professional Plumbing Services Houston",
+    "Houston Plumbing Company"
+  ],
+},
+{
+  slug: "emergency-plumbing-services-houston",
+
+  title:
+    "Emergency Plumbing Services Houston | 24/7 Emergency Plumber Solutions",
+
+  description:
+    "Need emergency plumbing services in Houston? Learn about common plumbing emergencies, repair solutions, response times, costs, and when to call a professional 24/7 plumber.",
+
+  category: "Emergency Plumbing",
+
+  image: "/images/service-1.png",
+
+  author: "Pipe Rescue Editorial Team",
+
+  publishedAt: "2026-09-15",
+
+  updatedAt: "2026-09-15",
+
+  readingTime: "12 min read",
+
+  keywords: [
+    "Emergency Plumbing Services Houston",
+    "Emergency Plumber Houston",
+    "24/7 Emergency Plumbing Houston",
+    "Emergency Plumbing Repair Houston",
+    "Houston Emergency Plumber",
+    "24 Hour Plumbing Service Houston",
+    "Burst Pipe Repair Houston",
+    "Licensed Emergency Plumber Houston"
+  ],
+},
+{
+  slug: "24-hour-emergency-plumber-houston",
+
+  title:
+    "24 Hour Emergency Plumber Houston | Fast 24/7 Emergency Plumbing Service",
+
+  description:
+    "Need a 24 hour emergency plumber in Houston? Learn what to do during plumbing emergencies, common urgent repairs, response times, costs, and how professional plumbers handle emergency situations.",
+
+  category: "Emergency Plumbing",
+
+  image: "/images/service-1.png",
+
+  author: "Pipe Rescue Editorial Team",
+
+  publishedAt: "2026-09-16",
+
+  updatedAt: "2026-09-16",
+
+  readingTime: "12 min read",
+
+  keywords: [
+    "24 Hour Emergency Plumber Houston",
+    "Emergency Plumber Houston",
+    "24/7 Emergency Plumbing Houston",
+    "Emergency Plumbing Service Houston",
+    "Houston Emergency Plumber",
+    "Emergency Plumbing Repair Houston",
+    "After Hours Plumber Houston",
+    "Fast Emergency Plumber Houston"
+  ],
+},
 ];
