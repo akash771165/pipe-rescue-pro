@@ -1330,4 +1330,36 @@ export const blogs: BlogPost[] = [
     "Emergency Plumbing Company Houston",
   ],
 },
+{
+  slug: "burst-pipe-repair-houston-tx",
+
+  title:
+    "Burst Pipe Repair Houston TX | Emergency Pipe Repair Services",
+
+  description:
+    "Need burst pipe repair in Houston TX? Learn what causes burst pipes, emergency steps to reduce water damage, repair options, costs, prevention tips, and when to call a professional plumber.",
+
+  category: "Emergency Plumbing",
+
+  image: "/images/blog-burst-pipe.jpg",
+
+  author: "Pipe Rescue Editorial Team",
+
+  publishedAt: "2026-09-12",
+
+  updatedAt: "2026-09-12",
+
+  readingTime: "11 min read",
+
+  keywords: [
+    "Burst Pipe Repair Houston TX",
+    "Burst Pipe Repair Houston",
+    "Emergency Pipe Repair Houston",
+    "Broken Water Pipe Repair",
+    "Water Pipe Burst Houston",
+    "Emergency Plumber Houston",
+    "24 Hour Pipe Repair Houston",
+    "Pipe Leak Repair Houston",
+  ],
+}
 ];
