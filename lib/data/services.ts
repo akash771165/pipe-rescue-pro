@@ -34,7 +34,8 @@ export interface Service {
   }>;
 }
 
-export const services: Service[] = [  {
+export const services: Service[] = [
+  {
     slug: "emergency-plumbing",
 
     title: "24/7 Emergency Plumbing Services in Houston, TX",
@@ -42,7 +43,7 @@ export const services: Service[] = [  {
     shortTitle: "Emergency Plumbing",
 
     seoTitle:
-      "24/7 Emergency Plumbing Services in Houston, TX | Pipe Rescue",
+      "24/7 Emergency Plumber Houston | Pipe Rescue",
 
     metaDescription:
       "Need an emergency plumber in Houston? Pipe Rescue provides fast 24/7 emergency plumbing services for burst pipes, leaks, clogged drains, and urgent repairs.",
@@ -84,7 +85,7 @@ export const services: Service[] = [  {
     shortTitle: "Drain Cleaning",
 
     seoTitle:
-      "Drain Cleaning Services in Houston, TX | Pipe Rescue",
+      "Drain Cleaning Houston, TX | Pipe Rescue",
 
     metaDescription:
       "Professional drain cleaning services in Houston for clogged sinks, toilets, showers, and sewer lines. Fast, affordable, and reliable service.",
@@ -117,7 +118,7 @@ export const services: Service[] = [  {
 
     icon: Droplets,
   },
-    {
+     {
     slug: "water-heater-repair",
 
     title: "Water Heater Repair & Installation in Houston, TX",
@@ -125,7 +126,7 @@ export const services: Service[] = [  {
     shortTitle: "Water Heater Repair",
 
     seoTitle:
-      "Water Heater Repair & Installation in Houston | Pipe Rescue",
+      "Water Heater Repair Houston | Pipe Rescue",
 
     metaDescription:
       "Need water heater repair in Houston? We repair, replace, and install tank and tankless water heaters for homes and businesses.",
@@ -167,7 +168,7 @@ export const services: Service[] = [  {
     shortTitle: "Leak Detection",
 
     seoTitle:
-      "Leak Detection Services in Houston, TX | Pipe Rescue",
+      "Leak Detection Houston, TX | Pipe Rescue",
 
     metaDescription:
       "Accurate leak detection services for homes and businesses in Houston. Find hidden water leaks before they cause expensive damage.",
@@ -200,7 +201,7 @@ export const services: Service[] = [  {
 
     icon: Pipette,
   },
-    {
+      {
     slug: "pipe-repair",
 
     title: "Professional Pipe Repair Services in Houston, TX",
@@ -208,7 +209,7 @@ export const services: Service[] = [  {
     shortTitle: "Pipe Repair",
 
     seoTitle:
-      "Pipe Repair Services in Houston, TX | Pipe Rescue",
+      "Pipe Repair Houston, TX | Pipe Rescue",
 
     metaDescription:
       "Expert pipe repair services in Houston for leaking, frozen, broken, and damaged water or sewer pipes. Fast response and lasting repairs.",
@@ -250,7 +251,7 @@ export const services: Service[] = [  {
     shortTitle: "Sewer Line Repair",
 
     seoTitle:
-      "Sewer Line Repair Services in Houston | Pipe Rescue",
+      "Sewer Line Repair Houston | Pipe Rescue",
 
     metaDescription:
       "Professional sewer line repair and replacement services in Houston. We fix blocked, damaged, and broken sewer lines quickly and efficiently.",
@@ -283,7 +284,8 @@ export const services: Service[] = [  {
 
     icon: ShowerHead,
   },
-    {
+
+  {
     slug: "toilet-repair",
 
     title: "Toilet Repair Services in Houston, TX",
@@ -291,7 +293,7 @@ export const services: Service[] = [  {
     shortTitle: "Toilet Repair",
 
     seoTitle:
-      "Toilet Repair Services in Houston, TX | Pipe Rescue",
+      "Toilet Repair Houston, TX | Pipe Rescue",
 
     metaDescription:
       "Professional toilet repair services in Houston for clogged, leaking, overflowing, or constantly running toilets. Fast and affordable plumbing solutions.",
@@ -324,8 +326,7 @@ export const services: Service[] = [  {
 
     icon: Toilet,
   },
-
-  {
+    {
     slug: "faucet-repair",
 
     title: "Faucet Repair & Replacement Services in Houston",
@@ -333,7 +334,7 @@ export const services: Service[] = [  {
     shortTitle: "Faucet Repair",
 
     seoTitle:
-      "Faucet Repair Services in Houston, TX | Pipe Rescue",
+      "Faucet Repair Houston, TX | Pipe Rescue",
 
     metaDescription:
       "Expert faucet repair and replacement services for kitchens, bathrooms, and commercial properties throughout Houston.",
@@ -366,7 +367,8 @@ export const services: Service[] = [  {
 
     icon: Bath,
   },
-    {
+
+  {
     slug: "commercial-plumbing",
 
     title: "Commercial Plumbing Services in Houston, TX",
@@ -374,7 +376,7 @@ export const services: Service[] = [  {
     shortTitle: "Commercial Plumbing",
 
     seoTitle:
-      "Commercial Plumbing Services in Houston, TX | Pipe Rescue",
+      "Commercial Plumbing Houston, TX | Pipe Rescue",
 
     metaDescription:
       "Reliable commercial plumbing services for offices, restaurants, retail stores, warehouses, and commercial buildings throughout Houston.",
@@ -416,7 +418,7 @@ export const services: Service[] = [  {
     shortTitle: "Residential Plumbing",
 
     seoTitle:
-      "Residential Plumbing Services in Houston, TX | Pipe Rescue",
+      "Residential Plumbing Houston, TX | Pipe Rescue",
 
     metaDescription:
       "Complete residential plumbing services for homes in Houston. Repairs, installations, drain cleaning, leak detection, water heaters, and emergency plumbing.",
