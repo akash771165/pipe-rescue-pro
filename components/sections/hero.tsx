@@ -20,12 +20,12 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
-      <div className="absolute inset-0">
-        <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-blue-100 opacity-40 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-sky-100 opacity-40 blur-3xl" />
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-0 top-0 h-80 w-80 rounded-full bg-blue-100/40 blur-2xl" />
+        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-sky-100/40 blur-2xl" />
       </div>
 
-      <div className="container-custom relative z-10 grid min-h-[85vh] items-center gap-16 py-16 lg:min-h-screen lg:grid-cols-2 lg:gap-20 lg:py-24">
+      <div className="container-custom relative z-10 grid min-h-[80vh] items-center gap-14 py-14 lg:min-h-[90vh] lg:grid-cols-2 lg:gap-20 lg:py-20">
         {/* LEFT */}
 
         <div>
@@ -41,7 +41,7 @@ export default function Hero() {
             in Houston, TX
           </h1>
 
-          <p className="mt-8 max-w-2xl text-xl leading-9 text-slate-600">
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600 lg:text-xl">
             Pipe Rescue helps homeowners connect with local plumbing
             professionals for emergency plumbing, drain cleaning, leak
             detection, water heater repair, sewer line services, and
@@ -52,14 +52,14 @@ export default function Hero() {
           <div className="mt-10 flex flex-wrap gap-5">
             <Link
               href="/contact"
-              className="rounded-full bg-blue-600 px-10 py-5 font-bold text-white transition hover:scale-105 hover:bg-blue-700"
+              className="rounded-full bg-blue-600 px-10 py-5 font-bold text-white transition-transform duration-300 hover:scale-105 hover:bg-blue-700"
             >
               Request Assistance
             </Link>
 
             <a
               href={`tel:${siteConfig.phone}`}
-              className="rounded-full border-2 border-slate-300 bg-white px-10 py-5 font-bold transition hover:border-blue-600 hover:text-blue-600"
+              className="rounded-full border-2 border-slate-300 bg-white px-10 py-5 font-bold transition-colors duration-300 hover:border-blue-600 hover:text-blue-600"
             >
               📞 {siteConfig.phoneDisplay}
             </a>
@@ -125,17 +125,17 @@ export default function Hero() {
         {/* RIGHT */}
 
         <div className="relative">
-          <div className="overflow-hidden rounded-[40px] shadow-2xl">
+          <div className="overflow-hidden rounded-[40px] shadow-xl">
             <Image
-              src="/images/hero.jpg"
+              src="/images/hero.avif"
               alt="Emergency plumbing services in Houston, Texas"
               width={1200}
               height={800}
               priority
               fetchPriority="high"
-              quality={75}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="aspect-[3/2] w-full object-cover lg:h-[650px]"
+              quality={60}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+              className="aspect-[3/2] h-auto w-full object-cover lg:h-[650px]"
             />
           </div>
         </div>

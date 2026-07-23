@@ -5,14 +5,53 @@ import Navbar from "@/components/layout/navbar";
 import Hero from "@/components/sections/hero";
 import Footer from "@/components/layout/footer";
 
-const Services = dynamic(() => import("@/components/sections/services"));
-const WhyUs = dynamic(() => import("@/components/sections/why-us"));
-const Stats = dynamic(() => import("@/components/sections/stats"));
-const Testimonials = dynamic(
-  () => import("@/components/sections/testimonials")
+const Services = dynamic(
+  () => import("@/components/sections/services"),
+  {
+    loading: () => null,
+    ssr: true,
+  }
 );
-const FAQ = dynamic(() => import("@/components/sections/faq"));
-const CTA = dynamic(() => import("@/components/sections/cta"));
+
+const WhyUs = dynamic(
+  () => import("@/components/sections/why-us"),
+  {
+    loading: () => null,
+    ssr: true,
+  }
+);
+
+const Stats = dynamic(
+  () => import("@/components/sections/stats"),
+  {
+    loading: () => null,
+    ssr: true,
+  }
+);
+
+const Testimonials = dynamic(
+  () => import("@/components/sections/testimonials"),
+  {
+    loading: () => null,
+    ssr: true,
+  }
+);
+
+const FAQ = dynamic(
+  () => import("@/components/sections/faq"),
+  {
+    loading: () => null,
+    ssr: true,
+  }
+);
+
+const CTA = dynamic(
+  () => import("@/components/sections/cta"),
+  {
+    loading: () => null,
+    ssr: true,
+  }
+);
 
 export const metadata: Metadata = {
   title: "24/7 Emergency Plumbing Services in Houston, TX",
@@ -48,6 +87,7 @@ export const metadata: Metadata = {
       "24/7 emergency plumber in Houston, TX. Fast drain cleaning, leak detection, sewer repair and water heater services.",
 
     url: "https://www.piperesque.com/",
+
     type: "website",
 
     images: [

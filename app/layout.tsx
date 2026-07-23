@@ -11,12 +11,14 @@ const geist = Geist({
   variable: "--font-geist",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -33,6 +35,12 @@ export const metadata: Metadata = {
   applicationName: siteConfig.company,
 
   referrer: "origin-when-cross-origin",
+
+  formatDetection: {
+    telephone: false,
+    address: false,
+    email: false,
+  },
 
   keywords: [
     "Emergency Plumber Houston",
@@ -135,13 +143,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://www.google-analytics.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://scripts.clarity.ms"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//scripts.clarity.ms" />
+      </head>
+
       <body
         suppressHydrationWarning
         className={`${geist.variable} ${inter.variable} bg-white text-slate-900 antialiased`}
       >
-        <ClarityProvider />
-
         {children}
+
+        <ClarityProvider />
 
         <GoogleTagManager gtmId="GTM-TC26LK2X" />
         <GoogleAnalytics gaId="G-CEVKCPR498" />
