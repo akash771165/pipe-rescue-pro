@@ -48,9 +48,9 @@ import { slabLeakRepairCostHoustonGuide } from "./slab-leak-repair-cost-houston-
 import { waterPressureProblemsHouston } from "./water-pressure-problems-houston";
 import { mainWaterLineRepairHouston } from "./main-water-line-repair-houston";
 import { emergencyPlumberHoustonCostGuide } from "./emergency-plumber-houston-cost-guide";
-import { twentyFourHourEmergencyPlumberHouston } from "./24-hour-emergency-plumber-houston";
 import { plumbingMaintenanceHouston } from "./plumbing-maintenance-houston";
 import { plumberHoustonTxGuide } from "./plumber-houston-tx";
+import { twentyFourHourPlumberHoustonTx } from "./24-hour-plumber-houston-tx";
 
 export const blogContent = {
   "emergency-plumber-near-me-houston": emergencyPlumberNearMeHouston,
@@ -104,6 +104,6 @@ export const blogContent = {
   "main-water-line-repair-houston": mainWaterLineRepairHouston,
   "emergency-plumber-houston-cost-guide": emergencyPlumberHoustonCostGuide,
   "plumber-houston-tx": plumberHoustonTxGuide,
-  "24-hour-emergency-plumber-houston": twentyFourHourEmergencyPlumberHouston,
+  "24-hour-plumber-houston-tx": twentyFourHourPlumberHoustonTx,
   "plumbing-maintenance-houston": plumbingMaintenanceHouston,
 };

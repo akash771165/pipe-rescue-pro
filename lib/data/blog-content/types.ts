@@ -17,6 +17,17 @@ export interface BlogCallToAction {
 }
 
 export interface BlogContent {
+  title?: string;
+  description?: string;
+  slug?: string;
+  category?: string;
+  image?: string;
+  author?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  readingTime?: string;
+  keywords?: string[];
+
   introduction: string[];
   sections: BlogSection[];
   callToAction: BlogCallToAction;
