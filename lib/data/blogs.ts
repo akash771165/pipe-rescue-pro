@@ -1261,4 +1261,27 @@ export const blogs: BlogPost[] = [
       "Home Water Tips",
     ],
   },
+  {
+  slug: "emergency-plumber-houston-tx",
+  title:
+    "Emergency Plumber Houston TX | 24/7 Emergency Plumbing Services",
+  description:
+    "Need an emergency plumber in Houston TX? Learn when to call a 24/7 plumber, common plumbing emergencies, immediate steps to prevent damage, and how professional plumbers handle urgent repairs.",
+  category: "Emergency Plumbing",
+  image: "/images/service-1.png",
+  author: "Pipe Rescue Editorial Team",
+  publishedAt: "2026-09-09",
+  updatedAt: "2026-09-09",
+  readingTime: "11 min read",
+  keywords: [
+    "Emergency Plumber Houston TX",
+    "Emergency Plumbing Houston",
+    "24 Hour Emergency Plumber Houston",
+    "Houston TX Emergency Plumber",
+    "Emergency Plumbing Services Houston",
+    "24/7 Plumbing Repair Houston",
+    "Local Emergency Plumber Houston",
+    "Burst Pipe Repair Houston",
+  ],
+},
 ];

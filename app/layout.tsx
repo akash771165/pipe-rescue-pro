@@ -146,7 +146,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Critical Connections */}
+        {/* Performance Hints */}
 
         <link
           rel="preconnect"
@@ -160,8 +160,6 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
 
-        {/* DNS Prefetch */}
-
         <link
           rel="dns-prefetch"
           href="//www.googletagmanager.com"
@@ -171,9 +169,6 @@ export default function RootLayout({
           rel="dns-prefetch"
           href="//www.google-analytics.com"
         />
-
-        {/* Clarity preconnect intentionally removed because
-            Lighthouse reported it as an unused preconnect. */}
       </head>
 
       <body
@@ -182,7 +177,7 @@ export default function RootLayout({
       >
         {children}
 
-        {/* Analytics */}
+        {/* Analytics & Monitoring */}
 
         <ClarityProvider />
 
