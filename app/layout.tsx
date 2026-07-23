@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Inter } from "next/font/google";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import {
+  GoogleAnalytics,
+  GoogleTagManager,
+} from "@next/third-parties/google";
 
 import "./globals.css";
 
@@ -8,15 +11,15 @@ import ClarityProvider from "@/components/providers/clarity";
 import { siteConfig } from "@/lib/config/site";
 
 const geist = Geist({
-  variable: "--font-geist",
   subsets: ["latin"],
+  variable: "--font-geist",
   display: "swap",
   preload: true,
 });
 
 const inter = Inter({
-  variable: "--font-inter",
   subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
   preload: true,
 });
@@ -135,7 +138,6 @@ export const viewport: Viewport = {
   maximumScale: 5,
   themeColor: "#2563eb",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -144,24 +146,34 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Critical Connections */}
+
         <link
           rel="preconnect"
           href="https://www.googletagmanager.com"
           crossOrigin="anonymous"
         />
+
         <link
           rel="preconnect"
           href="https://www.google-analytics.com"
           crossOrigin="anonymous"
         />
+
+        {/* DNS Prefetch */}
+
         <link
-          rel="preconnect"
-          href="https://scripts.clarity.ms"
-          crossOrigin="anonymous"
+          rel="dns-prefetch"
+          href="//www.googletagmanager.com"
         />
-        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="//www.google-analytics.com" />
-        <link rel="dns-prefetch" href="//scripts.clarity.ms" />
+
+        <link
+          rel="dns-prefetch"
+          href="//www.google-analytics.com"
+        />
+
+        {/* Clarity preconnect intentionally removed because
+            Lighthouse reported it as an unused preconnect. */}
       </head>
 
       <body
@@ -170,9 +182,12 @@ export default function RootLayout({
       >
         {children}
 
+        {/* Analytics */}
+
         <ClarityProvider />
 
         <GoogleTagManager gtmId="GTM-TC26LK2X" />
+
         <GoogleAnalytics gaId="G-CEVKCPR498" />
       </body>
     </html>
