@@ -5,6 +5,7 @@ import {
   GoogleTagManager,
 } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
 
@@ -148,22 +149,17 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Performance Hints */}
-
         <link
           rel="preconnect"
           href="https://www.googletagmanager.com"
           crossOrigin="anonymous"
         />
-
         <link
           rel="preconnect"
           href="https://www.google-analytics.com"
           crossOrigin="anonymous"
         />
-
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
       </head>
 
@@ -173,15 +169,11 @@ export default function RootLayout({
       >
         {children}
 
-        {/* Analytics & Monitoring */}
-
         <ClarityProvider />
-
         <GoogleTagManager gtmId="GTM-TC26LK2X" />
-
         <GoogleAnalytics gaId="G-CEVKCPR498" />
-
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
