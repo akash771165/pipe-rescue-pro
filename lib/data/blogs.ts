@@ -1361,5 +1361,142 @@ export const blogs: BlogPost[] = [
     "24 Hour Pipe Repair Houston",
     "Pipe Leak Repair Houston",
   ],
-}
+},
+{
+  slug: "water-leak-detection-houston-tx",
+
+  title:
+    "Water Leak Detection Houston TX | Hidden & Underground Leak Detection Services",
+
+  description:
+    "Professional water leak detection services in Houston TX. Learn how hidden leaks are detected, common warning signs, repair options, costs, and when to call a professional plumber.",
+
+  category: "Leak Detection",
+
+  image: "/images/service-2.png",
+
+  author: "Pipe Rescue Editorial Team",
+
+  publishedAt: "2026-09-13",
+
+  updatedAt: "2026-09-13",
+
+  readingTime: "11 min read",
+
+  keywords: [
+    "Water Leak Detection Houston TX",
+    "Water Leak Detection Houston",
+    "Hidden Water Leak Detection",
+    "Underground Leak Detection Houston",
+    "Emergency Leak Detection Houston",
+    "Leak Detection Company Houston",
+    "Water Leak Repair Houston",
+    "Professional Leak Detection Services",
+  ],
+},
+{
+  slug: "best-plumber-houston-tx",
+  title:
+    "Best Plumber Houston TX | Professional Plumbing Services You Can Trust",
+
+  description:
+    "Looking for the best plumber in Houston TX? Learn how to choose a reliable plumbing company, common plumbing services, emergency repairs, costs, and why professional plumbers matter.",
+
+  category: "Plumbing Services",
+
+  image: "/images/service-1.png",
+
+  author: "Pipe Rescue Editorial Team",
+
+  publishedAt: "2026-09-14",
+
+  updatedAt: "2026-09-14",
+
+  readingTime: "11 min read",
+
+  keywords: [
+    "Best Plumber Houston TX",
+    "Best Plumber Houston",
+    "Houston Plumbing Company",
+    "Professional Plumber Houston",
+    "Licensed Plumber Houston TX",
+    "Emergency Plumber Houston",
+    "Residential Plumbing Houston",
+    "24 Hour Plumber Houston",
+  ],
+},
+
+
+{
+  slug: "burst-pipe-repair-houston-tx",
+
+  title:
+    "Burst Pipe Repair Houston TX | Emergency Pipe Repair Services",
+
+  description:
+    "Need burst pipe repair in Houston TX? Learn what causes burst pipes, emergency steps to reduce water damage, repair options, costs, prevention tips, and when to call a professional plumber.",
+
+  category: "Emergency Plumbing",
+
+  image: "/images/blog-burst-pipe.jpg",
+
+  author:
+    "Pipe Rescue Editorial Team",
+
+  publishedAt:
+    "2026-09-15",
+
+  updatedAt:
+    "2026-09-15",
+
+  readingTime:
+    "11 min read",
+
+  keywords: [
+    "Burst Pipe Repair Houston TX",
+    "Burst Pipe Repair Houston",
+    "Emergency Pipe Repair Houston",
+    "Broken Water Pipe Repair",
+    "Water Pipe Burst Houston",
+    "Emergency Plumber Houston",
+    "24 Hour Pipe Repair Houston",
+    "Pipe Leak Repair Houston",
+  ],
+},
+{
+  slug: "plumbing-company-houston-tx",
+
+  title:
+    "Plumbing Company Houston TX | Trusted Professional Plumbing Services",
+
+  description:
+    "Looking for a reliable plumbing company in Houston TX? Learn about professional plumbing services, emergency repairs, maintenance, costs, and how to choose the right plumber for your home or business.",
+
+  category: "Plumbing Services",
+
+  image: "/images/service-1.png",
+
+  author:
+    "Pipe Rescue Editorial Team",
+
+  publishedAt:
+    "2026-09-16",
+
+  updatedAt:
+    "2026-09-16",
+
+  readingTime:
+    "11 min read",
+
+  keywords: [
+    "Plumbing Company Houston TX",
+    "Houston Plumbing Company",
+    "Professional Plumbing Company Houston",
+    "Licensed Plumber Houston TX",
+    "Residential Plumbing Services Houston",
+    "Commercial Plumbing Houston",
+    "Emergency Plumbing Company Houston",
+    "24 Hour Plumbing Services Houston",
+  ],
+},
 ];

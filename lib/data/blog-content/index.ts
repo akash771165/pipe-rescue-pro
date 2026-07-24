@@ -53,6 +53,9 @@ import { plumberHoustonTxGuide } from "./plumber-houston-tx";
 import { twentyFourHourPlumberHoustonTx } from "./24-hour-plumber-houston-tx";
 import { emergencyPlumbingServicesHouston } from "./emergency-plumbing-services-houston";
 import { burstPipeRepairHoustonTx } from "./burst-pipe-repair-houston-tx";
+import { waterLeakDetectionHoustonTx } from "./water-leak-detection-houston-tx";
+import { plumbingCompanyHoustonTx } from "./plumbing-company-houston-tx";
+import { bestPlumberHoustonTx } from "./best-plumber-houston-tx";
 
 export const blogContent = {
   "emergency-plumber-near-me-houston": emergencyPlumberNearMeHouston,
@@ -110,5 +113,8 @@ export const blogContent = {
   "plumbing-maintenance-houston": plumbingMaintenanceHouston,
   "emergency-plumbing-services-houston": emergencyPlumbingServicesHouston,
   "burst-pipe-repair-houston-tx": burstPipeRepairHoustonTx,
+  "water-leak-detection-houston-tx": waterLeakDetectionHoustonTx,
+  "plumbing-company-houston-tx": plumbingCompanyHoustonTx,
+  "best-plumber-houston-tx": bestPlumberHoustonTx,
 
 };

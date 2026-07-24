@@ -6,41 +6,6 @@ export interface BlogAuthor {
 }
 
 
-export interface BlogSection {
-  id?: string;
-
-  title: string;
-
-  subtitle?: string;
-
-  content: string[];
-
-  bullets?: string[];
-
-  numberedList?: string[];
-
-  image?: string;
-
-  imageAlt?: string;
-
-  table?: BlogTable;
-
-  tips?: string[];
-
-  warning?: string;
-
-  note?: string;
-
-  pros?: string[];
-
-  cons?: string[];
-
-  steps?: BlogStep[];
-
-  relatedLinks?: BlogLink[];
-}
-
-
 export interface BlogStep {
   title: string;
   description: string;
@@ -59,12 +24,80 @@ export interface BlogLink {
 }
 
 
+export interface BlogVideo {
+  url: string;
+  title?: string;
+  thumbnail?: string;
+}
+
+
+export interface BlogSection {
+
+  id?: string;
+
+  title: string;
+
+  subtitle?: string;
+
+
+  content: string[];
+
+
+  bullets?: string[];
+
+
+  numberedList?: string[];
+
+
+  image?: string;
+
+  imageAlt?: string;
+
+
+  table?: BlogTable;
+
+
+  tips?: string[];
+
+
+  warning?: string;
+
+
+  note?: string;
+
+
+  pros?: string[];
+
+
+  cons?: string[];
+
+
+  steps?: BlogStep[];
+
+
+  relatedLinks?: BlogLink[];
+
+
+  video?: BlogVideo;
+
+
+  quote?: string;
+
+
+  code?: string;
+
+
+  highlight?: string;
+
+}
 export interface BlogFAQ {
+
   question: string;
 
   answer: string;
 
   category?: string;
+
 }
 
 
@@ -79,17 +112,19 @@ export interface BlogCallToAction {
   phone?: string;
 
   url?: string;
+
 }
 
 
 export interface BlogSchema {
 
-  type?: 
-  | "Article"
-  | "FAQPage"
-  | "HowTo"
-  | "Service"
-  | "LocalBusiness";
+  type?:
+    | "Article"
+    | "FAQPage"
+    | "HowTo"
+    | "Service"
+    | "LocalBusiness";
+
 
   data?: Record<string, any>;
 
@@ -102,19 +137,60 @@ export interface BlogSEO {
 
   description?: string;
 
+
   canonical?: string;
+
 
   robots?: string;
 
+
   keywords?: string[];
+
+
+  ogTitle?: string;
+
+  ogDescription?: string;
+
+  ogImage?: string;
+
+
+  twitterTitle?: string;
+
+  twitterDescription?: string;
+
+  twitterImage?: string;
+
+
+  schemaType?:
+    | "Article"
+    | "FAQPage"
+    | "HowTo"
+    | "Service"
+    | "LocalBusiness";
 
 }
 
 
+
+export interface BlogService {
+
+  name?: string;
+
+  area?: string;
+
+  priceRange?: string;
+
+  emergency?: boolean;
+
+}
+
+
+
 export interface BlogContent {
 
+
   /*
-  Basic SEO Information
+  Basic Information
   */
 
   title?: string;
@@ -128,6 +204,15 @@ export interface BlogContent {
   subCategory?: string;
 
 
+
+  /*
+  Service SEO Data
+  */
+
+  service?: BlogService;
+
+
+
   /*
   Media
   */
@@ -137,11 +222,13 @@ export interface BlogContent {
   imageAlt?: string;
 
 
+
   /*
-  Author Information
+  Author
   */
 
   author?: string | BlogAuthor;
+
 
 
   /*
@@ -153,25 +240,29 @@ export interface BlogContent {
   updatedAt?: string;
 
 
+
   /*
-  Reading Information
+  Reading Info
   */
 
   readingTime?: string;
 
 
+
   /*
-  SEO Keywords
+  Keywords
   */
 
   keywords?: string[];
 
 
+
   /*
-  SEO Metadata
+  Advanced SEO
   */
 
   seo?: BlogSEO;
+
 
 
   /*
@@ -186,7 +277,7 @@ export interface BlogContent {
 
 
   /*
-  CTA Section
+  CTA
   */
 
   callToAction: BlogCallToAction;
@@ -194,7 +285,7 @@ export interface BlogContent {
 
 
   /*
-  FAQ Content
+  FAQ
   */
 
   faqs: BlogFAQ[];
@@ -202,7 +293,7 @@ export interface BlogContent {
 
 
   /*
-  Schema Markup Support
+  Schema
   */
 
   schema?: BlogSchema;
@@ -210,7 +301,7 @@ export interface BlogContent {
 
 
   /*
-  Related Blog Support
+  Related Content
   */
 
   relatedBlogs?: BlogLink[];
@@ -218,7 +309,7 @@ export interface BlogContent {
 
 
   /*
-  Service Area SEO
+  Local SEO
   */
 
   locations?: string[];
@@ -226,7 +317,7 @@ export interface BlogContent {
 
 
   /*
-  Internal Linking
+  Internal Links
   */
 
   internalLinks?: BlogLink[];
@@ -242,7 +333,7 @@ export interface BlogContent {
 
 
   /*
-  Extra Custom Data
+  Extra Dynamic Data
   */
 
   metadata?: Record<string, any>;
