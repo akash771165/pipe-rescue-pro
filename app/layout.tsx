@@ -4,6 +4,7 @@ import {
   GoogleAnalytics,
   GoogleTagManager,
 } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
 
@@ -138,6 +139,7 @@ export const viewport: Viewport = {
   maximumScale: 5,
   themeColor: "#2563eb",
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -160,15 +162,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
 
-        <link
-          rel="dns-prefetch"
-          href="//www.googletagmanager.com"
-        />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
 
-        <link
-          rel="dns-prefetch"
-          href="//www.google-analytics.com"
-        />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
       </head>
 
       <body
@@ -184,6 +180,8 @@ export default function RootLayout({
         <GoogleTagManager gtmId="GTM-TC26LK2X" />
 
         <GoogleAnalytics gaId="G-CEVKCPR498" />
+
+        <Analytics />
       </body>
     </html>
   );
